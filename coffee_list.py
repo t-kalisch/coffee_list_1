@@ -63,7 +63,7 @@ for i in range(15):
 coffees_monthly = st.sidebar.checkbox("Coffees per month")
 if coffees_monthly:
     st.header("Coffees per month per person")
-    df = pd.DataFrame(monthly_coffees1, columns=names, months)
+    df = pd.DataFrame(monthly_coffees1, months, columns=names)
     st.write(alt.Chart(df).mark_bar().encode(x=alt.X('months', sort=None),y='monthly_coffees1',))
     #sorterIndex = dict(zip(months, range(len(months))))
     #df['month_Rank'] = df['months'].map(sorterIndex)
