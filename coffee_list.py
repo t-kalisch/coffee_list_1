@@ -63,8 +63,13 @@ coffees_monthly = st.sidebar.checkbox("Coffees per month")
 if coffees_monthly:
     st.header("Coffees per month per person")
     df = pd.DataFrame(monthly_coffees1, columns=names, index=months)
-    ax = df.set_index(monthly_coffees1).loc[months].plot(kind="line", legend=False)
-    ax.set_ylabel("Value")
+   
+   sorterIndex = dict(zip(sorter, range(len(months))))
+   df['month_Rank'] = df['months'].map(sorterIndex)
+   df.sort_values(['month_Rank'],ascending = [True], inplace = True)
+   df.drop('month_Rank', 1, inplace = True)
+   print(df)
+   
     st.line_chart(data=ax, width=0, height=0, use_container_width=True)
     
 coffees_total = st.sidebar.checkbox("Total coffees")
