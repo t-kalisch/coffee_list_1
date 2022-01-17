@@ -70,7 +70,7 @@ if coffees_monthly:
     #df.drop('month_Rank', 1, inplace = True)
     #print(df)
    
-    st.line_chart(data=ax, width=0, height=0, use_container_width=True)
+    st.line_chart(data=df, width=0, height=0, use_container_width=True)
     
 coffees_total = st.sidebar.checkbox("Total coffees")
 if coffees_total:
