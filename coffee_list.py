@@ -64,11 +64,11 @@ if coffees_monthly:
     st.header("Coffees per month per person")
     df = pd.DataFrame(monthly_coffees1, columns=names, index=months)
    
-    sorterIndex = dict(zip(months, range(len(months))))
-    df['month_Rank'] = df['months'].map(sorterIndex)
-    df.sort_values(['month_Rank'],ascending = [True], inplace = True)
-    df.drop('month_Rank', 1, inplace = True)
-    print(df)
+    #sorterIndex = dict(zip(months, range(len(months))))
+    #df['month_Rank'] = df['months'].map(sorterIndex)
+    #df.sort_values(['month_Rank'],ascending = [True], inplace = True)
+    #df.drop('month_Rank', 1, inplace = True)
+    #print(df)
    
     st.line_chart(data=ax, width=0, height=0, use_container_width=True)
     
