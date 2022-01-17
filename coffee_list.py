@@ -62,7 +62,7 @@ for i in range(15):
 coffees_monthly = st.sidebar.checkbox("Coffees per month")
 if coffees_monthly:
     st.header("Coffees per month per person")
-    df = pd.DataFrame(monthly_coffees1, columns=names)
+    df = pd.DataFrame(monthly_coffees1, columns=names, index=months)
     st.line_chart(data=df, width=0, height=0, use_container_width=True)
     
 coffees_total = st.sidebar.checkbox("Total coffees")
