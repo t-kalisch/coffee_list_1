@@ -10,7 +10,7 @@ from datetime import date
 #from data_collection import *
 
 
-st.set_page_config(page_title="Coffee list",page_icon="chart_with_upwards_trend",layout=wide) 
+st.set_page_config(page_title="Coffee list",page_icon="chart_with_upwards_trend") 
 
 """
 # Welcome to our coffee list!
