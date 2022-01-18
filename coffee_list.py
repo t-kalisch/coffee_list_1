@@ -161,7 +161,7 @@ if correlation_abs:
            temp=[]
            temp.append(i+1)
            temp.append(j+1)
-            temp.append(corr_abs[i][j])      #calculates absolute correlation
+           temp.append(corr_abs[i][j])      #calculates absolute correlation
            temp2.append(temp)
 
    df = pd.DataFrame(temp2, columns={'x-values','y-values','size'})
