@@ -153,7 +153,7 @@ if correlation_abs:
    
    df = pd.DataFrame(corr_abs, columns=names, index=names)
    col2.dataframe(df)
-   fig5 = px.scatter(df, size='value', x=names)
+   fig5 = px.scatter(df, size='value', x=names,marker=dict(color=[120, 125, 130, 135, 140, 145], showscale=True)
    col1.plotly_chart(fig5, use_container_width=True)
 
    
