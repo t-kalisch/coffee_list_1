@@ -82,7 +82,7 @@ if coffees_monthly:
     st.plotly_chart(fig2, use_container_width=True)
     
     
-col1, col2 = st.columns([2,1])                        #setting up two columns for narrower charts     
+col1, col2 = st.columns([1,1])                        #setting up two columns for narrower charts     
 #-------------------------------------------------------------------------------------------------------------- monthly ratios (stacked bar chart)
 ratio_monthly = st.sidebar.checkbox("Monthly ratios")
 if ratio_monthly:
@@ -117,7 +117,7 @@ if coffees_total:
         temp1.append(total_coffees[i])
         temp.append(temp1)
     df = pd.DataFrame(temp, columns={"names","total"}, index=names)              #total coffees pie chart
-    fig3 = go.Figure(go.Pie(labels = names, values = total_coffees, sort=False))
+    fig3 = go.Figure(go.Pie(labels = names, values = total_coffees, sort=False, hole=.3))
     col1.plotly_chart(fig3, use_container_width=True)
 
     
