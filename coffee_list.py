@@ -151,7 +151,8 @@ if correlation_abs:
    col1.header("Absolute correlation")
    
    df = pd.DataFrame(corr_abs, columns=names, index=names)
-
+   fig5 = px.scatter(df)
+   col1.plotly_chart(fig6, use_container_width=True)
 
 #-------------------------------------------------------------------------------------------------------------- cumulated coffees monthly (line chart)
 coffees_cumulated = st.sidebar.checkbox("Cumulated coffees")
@@ -159,8 +160,8 @@ if coffees_cumulated:
     st.header("Cumulated coffees")
     
     df = pd.DataFrame(cumulated_coffees1, columns=names, index=months)
-    fig5 = px.line(df, title="Number of coffees per month per person", labels={"variable":"drinkers", "index":"", "value":"Number of coffees"})
-    st.plotly_chart(fig5, use_container_width=True)
+    fig10 = px.line(df, title="Number of coffees per month per person", labels={"variable":"drinkers", "index":"", "value":"Number of coffees"})
+    st.plotly_chart(fig10, use_container_width=True)
 
 
       
