@@ -91,7 +91,7 @@ if coffees_total:
     st.pyplot(fig1)
       
       
-    st.plotly_chart(total_coffees, use_container_width=False, sharing="streamlit", **kwargs)
+    st.plotly_chart(total_coffees, use_container_width=False, sharing="streamlit")
 
 
 coffees_cumulated = st.sidebar.checkbox("Cumulated coffees")
