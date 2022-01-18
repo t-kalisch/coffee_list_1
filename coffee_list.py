@@ -146,7 +146,7 @@ if ratio_monthly:                                                          #with
 #   col2.plotly_chart(fig4, use_container_width=True)
 
 
-#-------------------------------------------------------------------------------------------------------------- absolute correlation (bubble chart)
+#-------------------------------------------------------------------------------------------------------------- absolute and relative correlations (bubble charts)
 correlation_abs = st.sidebar.checkbox("Correlation")
 if correlation_abs:
    st.header("Correlation diagrams")
@@ -166,15 +166,15 @@ if correlation_abs:
    size_corr=[]
    for i in range(len(corr_abs)):
       for j in range(len(corr_abs[i])):
-         size_corr.append(corr_abs[i][j])
+         size_corr.append(corr_abs[i][j])                         #calculates absolute correlation
       #temp3.append(corr_abs[i][0])
    df = pd.DataFrame(temp2, columns={'x-values','y-values'})
    
    fig5 = px.scatter(df, x='x-values', y='y-values', size=size_corr, labels={"x-values":"", "y-values":""}, title="Absolute correlation")
    fig5.update_layout(showlegend=False, xaxis=dict(tickmode = 'array', tickvals = tickval_num, ticktext = names), yaxis=dict(tickmode = 'array', tickvals = tickval_num, ticktext = names))
-   col1.plotly_chart(fig5, use_container_width=True)
-   
-   temp=[]
+   col1.plotly_chart(fig5, use_container_width=True)              #absolute correlation
+   #                                                  --------------------------------------------------
+   temp=[]                                                        #relative correlation
    temp1=[]
    temp2=[]
    tickval_num=[]
@@ -189,11 +189,11 @@ if correlation_abs:
    size_corr=[]
    for i in range(len(corr_abs)):
       for j in range(len(corr_abs[i])):
-         size_corr.append(corr_abs[i][j]/total_coffees[i])
+         size_corr.append(corr_abs[i][j]/total_coffees[i])           #!!!!  Calculates relative correlation; uses total_coffees  !!!!
       #temp3.append(corr_abs[i][0])
    df = pd.DataFrame(temp2, columns={'x-values','y-values'})
    
-   fig5 = px.scatter(df, x='x-values', y='y-values', size=size_corr, labels={"x-values":"", "y-values":""}, title="Absolute correlation")
+   fig5 = px.scatter(df, x='x-values', y='y-values', size=size_corr, labels={"x-values":"", "y-values":""}, title="Absolute correlation", color="size")
    fig5.update_layout(showlegend=False, xaxis=dict(tickmode = 'array', tickvals = tickval_num, ticktext = names), yaxis=dict(tickmode = 'array', tickvals = tickval_num, ticktext = names))
    col2.plotly_chart(fig5, use_container_width=True)
 
