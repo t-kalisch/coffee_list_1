@@ -137,8 +137,10 @@ if coffees_cumulated:
 if ratio_monthly:
    col2.header("Monthly ratios")
    
+   months_inv=[]
    temp=[]
    for i in range(len(months)):
+      months_inv.append(months[len(months)-i-1])
       temp1=[]
       temp1.append(months[len(months)-i-1])
       for j in range(len(names)):
@@ -149,8 +151,8 @@ if ratio_monthly:
    for i in range(len(names)):
       temp2.append(names[i])
    
-   df_stack=pd.DataFrame(temp, columns = temp2, index = months)
-   fig4 = px.bar(df_stack, x=names, y = months, barmode = 'relative', labels={"y":"", "value":"Percentage", "variable":"drinkers"})#, text='value', text_auto=True)
+   df_stack=pd.DataFrame(temp, columns = temp2, index = months_inv)
+   fig4 = px.bar(df_stack, x=names, y = months_inv, barmode = 'relative', labels={"y":"", "value":"Percentage", "variable":"drinkers"})#, text='value', text_auto=True)
    col2.plotly_chart(fig4, use_container_width=True)
       
       
