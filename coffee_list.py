@@ -98,7 +98,7 @@ if ratio_monthly:
    for i in range(len(names)):
       temp2.append(names[i])
    st.write(temp2)
-   st.write(temp1)
+   
    df_stack=pd.DataFrame(temp, columns=temp2, index=names)
    st.write(df_stack)
    fig4 = px.bar(df_stack, barmode = 'stack')
