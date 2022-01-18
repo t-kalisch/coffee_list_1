@@ -100,7 +100,6 @@ if ratio_monthly:
       temp2.append(names[i])
    
    df_stack=pd.DataFrame(temp, columns = temp2, index = months)
-   st.write(df_stack)
    fig4 = px.bar(df_stack, x=names, y = months, barmode = 'stack')
    st.plotly_chart(fig4)
     
