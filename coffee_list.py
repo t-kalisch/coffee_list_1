@@ -85,7 +85,13 @@ if coffees_monthly:
 coffees_total = st.sidebar.checkbox("Total coffees")
 if coffees_total:
     st.header("Total coffees")
-    df = pd.DataFrame(total_coffees, columns={"total"}, index=names)
+    
+    temp=[]
+    for i in range(len(total_coffees)):
+        temp1=[]
+        temp1.append(names[i])
+        temp1.append(total_coffees[i])
+    df = pd.DataFrame(temp1, columns={"names","total"}, index=names)
     st.dataframe(df)
     fig3 = px.pie(df, names = names, values="total")
     #fig3 = px.pie(names = names,values = total_coffees, sort=False)
