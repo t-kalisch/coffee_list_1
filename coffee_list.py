@@ -147,9 +147,9 @@ if ratio_monthly:                                                          #with
 
 
 #-------------------------------------------------------------------------------------------------------------- absolute correlation (bubble chart)
-correlation_abs = st.sidebar.checkbox("Absolute correlation")
+correlation_abs = st.sidebar.checkbox("Correlation")
 if correlation_abs:
-   col1.header("Absolute correlation")
+   st.header("Correlation diagrams")
    
    temp=[]
    temp1=[]
@@ -162,17 +162,40 @@ if correlation_abs:
            temp.append(i+1)
            temp.append(j+1)
            temp2.append(temp)
-   
+
    size_corr=[]
    for i in range(len(corr_abs)):
       for j in range(len(corr_abs[i])):
          size_corr.append(corr_abs[i][j])
       #temp3.append(corr_abs[i][0])
    df = pd.DataFrame(temp2, columns={'x-values','y-values'})
-   col2.dataframe(df)
-   fig5 = px.scatter(df, x='x-values', y='y-values', size=size_corr, labels={"x-values":"", "y-values":""})
+   
+   fig5 = px.scatter(df, x='x-values', y='y-values', size=size_corr, labels={"x-values":"", "y-values":""}, title="Absolute correlation")
    fig5.update_layout(showlegend=False, xaxis=dict(tickmode = 'array', tickvals = tickval_num, ticktext = names), yaxis=dict(tickmode = 'array', tickvals = tickval_num, ticktext = names))
    col1.plotly_chart(fig5, use_container_width=True)
+   
+   temp=[]
+   temp1=[]
+   temp2=[]
+   tickval_num=[]
+   for i in range(len(names)):
+       tickval_num.append(i+1)
+       for j in range(len(names)):
+           temp=[]
+           temp.append(i+1)
+           temp.append(j+1)
+           temp2.append(temp)
+
+   size_corr=[]
+   for i in range(len(corr_abs)):
+      for j in range(len(corr_abs[i])):
+         size_corr.append(corr_abs[i][j]/total_coffees[i])
+      #temp3.append(corr_abs[i][0])
+   df = pd.DataFrame(temp2, columns={'x-values','y-values'})
+   
+   fig5 = px.scatter(df, x='x-values', y='y-values', size=size_corr, labels={"x-values":"", "y-values":""}, title="Absolute correlation")
+   fig5.update_layout(showlegend=False, xaxis=dict(tickmode = 'array', tickvals = tickval_num, ticktext = names), yaxis=dict(tickmode = 'array', tickvals = tickval_num, ticktext = names))
+   col2.plotly_chart(fig5, use_container_width=True)
 
    
 #-------------------------------------------------------------------------------------------------------------- cumulated coffees monthly (line chart)
