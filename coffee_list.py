@@ -69,9 +69,9 @@ if coffees_monthly:
     fig1 = px.line(df, title="Number of coffees per month per person")
     st.plotly_chart(fig1, use_container_width=True)
     
-    temp=[]
     temp1=[]
     for i in range(len(months)):
+         temp=[]
          temp.append(months[i])
          temp.append(monthly_coffees_total[i])
          temp1.append(temp)
