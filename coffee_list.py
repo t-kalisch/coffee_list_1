@@ -65,6 +65,7 @@ if coffees_monthly:
     st.header("Coffees per month per person")
     df = pd.DataFrame(monthly_coffees1, columns=names)
     st.dataframe(df)
+    st.bar_chart(df)
    
     #st.write(alt.Chart(df).mark_bar().encode(x=alt.X('months', sort=None),y='monthly_coffees1',))
       
