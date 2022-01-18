@@ -153,7 +153,6 @@ if correlation_abs:
    
    temp=[]
    temp2=[]
-   temp2.append("index")
    for i in range(len(names)):
        temp2.append(i+1)
    for j in range(len(names)):
