@@ -83,6 +83,9 @@ if coffees_total:
     ax1.axis('equal')
     st.header("Total coffees")
     st.pyplot(fig1)
+      
+    alt.Chart(total_coffees).mark_arc().encode(
+    theta=alt.Theta(field="value", type="quantitative"),color=alt.Color(field="category", type="nominal"),)
 
 coffees_cumulated = st.sidebar.checkbox("Cumulated coffees")
 if coffees_cumulated:
