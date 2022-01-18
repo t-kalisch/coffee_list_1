@@ -153,6 +153,7 @@ if correlation_abs:
    
    temp=[]
    temp1=[]
+   temp2=[]
    for i in range(len(names)):
        for j in range(len(names)):
            temp=[]
@@ -169,7 +170,7 @@ if correlation_abs:
       #   temp1.append(corr_abs[i][j])
       temp3.append(corr_abs[i][0])
    size_corr = pd.DataFrame(corr_abs, columns=names, index=names)
-   col2.dataframe(size_corr)
+   #col2.dataframe(size_corr)
    df = pd.DataFrame(temp2)
    col2.dataframe(df)
    fig5 = px.scatter(df)
