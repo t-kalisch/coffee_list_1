@@ -174,7 +174,7 @@ if correlation_abs:
    df = pd.DataFrame(temp2, columns={'x-values','y-values'})
    col2.dataframe(df)
    fig5 = px.scatter(df, x='x-values', y='y-values', size=temp3)#, ticktext = df['date'])
-   fig5.update_layout(showlegend=False, yaxis_visible=False, yaxis_showticklabels=False, xaxis=dict(tickmode = 'array', tickvals = names, ticktext = names))#, xaxis_visible=False, xaxis_showticklabels=False)
+   fig5.update_layout(showlegend=False, yaxis_visible=False, yaxis_showticklabels=False, xaxis=dict(tickmode = 'array', tickvals = [1000,10000,100000,2,3,2,4,6,5], ticktext = names))#, xaxis_visible=False, xaxis_showticklabels=False)
    col1.plotly_chart(fig5, use_container_width=True)
 
    
