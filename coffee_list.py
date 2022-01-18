@@ -87,8 +87,7 @@ if ratio_monthly:
    st.header("Monthly ratios")
    df_stack=pd.DataFrame(monthly_ratios, columns=months, index=names)
    st.write(df_stack)
-   fig = px.bar(df_stack, x = 'Attrition_Flag', y = 'Counts', color = 
-    'Education_Level', barmode = 'stack')
+   fig = px.bar(df_stack, barmode = 'stack')
     
       
       
