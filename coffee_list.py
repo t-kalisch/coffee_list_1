@@ -82,7 +82,26 @@ if coffees_monthly:
     st.plotly_chart(fig2, use_container_width=True)
     
     
-col1, col2 = st.columns([1,1])                        #setting up two columns for narrower charts     
+col1, col2 = st.columns([1,1])                        #setting up two columns for narrower charts   
+
+
+#-------------------------------------------------------------------------------------------------------------- total coffees (pie chart)
+coffees_total = st.sidebar.checkbox("Total coffees")
+if coffees_total:
+    col1.header("Total coffees")
+
+    temp=[]
+    for i in range(len(total_coffees)):
+        temp1=[]
+        temp1.append(names[i])
+        temp1.append(total_coffees[i])
+        temp.append(temp1)
+    df = pd.DataFrame(temp, columns={"names","total"}, index=names)              #total coffees pie chart
+    fig3 = go.Figure(go.Pie(labels = names, values = total_coffees, sort=False, hole=.4))
+    col1.plotly_chart(fig3, use_container_width=True)
+
+
+
 #-------------------------------------------------------------------------------------------------------------- monthly ratios (stacked bar chart)
 ratio_monthly = st.sidebar.checkbox("Monthly ratios")
 if ratio_monthly:
@@ -102,25 +121,7 @@ if ratio_monthly:
    
    df_stack=pd.DataFrame(temp, columns = temp2, index = months)
    fig4 = px.bar(df_stack, x=names, y = months, barmode = 'relative', labels={"y":"", "value":"percentage", "variable":"drinkers"})#, text='value', text_auto=True)
-   col2.plotly_chart(fig4, use_container_width=True)
-    
-      
-#-------------------------------------------------------------------------------------------------------------- total coffees (pie chart)
-coffees_total = st.sidebar.checkbox("Total coffees")
-if coffees_total:
-    col1.header("Total coffees")
-
-    temp=[]
-    for i in range(len(total_coffees)):
-        temp1=[]
-        temp1.append(names[i])
-        temp1.append(total_coffees[i])
-        temp.append(temp1)
-    df = pd.DataFrame(temp, columns={"names","total"}, index=names)              #total coffees pie chart
-    fig3 = go.Figure(go.Pie(labels = names, values = total_coffees, sort=False, hole=.4))
-    col1.plotly_chart(fig3, use_container_width=True)
-
-    
+   col2.plotly_chart(fig4, use_container_width=True=   
 
 #-------------------------------------------------------------------------------------------------------------- cumulated coffees monthly (line chart)
 coffees_cumulated = st.sidebar.checkbox("Cumulated coffees")
