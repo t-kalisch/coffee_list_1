@@ -83,7 +83,7 @@ if coffees_monthly:
 ratio_monthly = st.sidebar.checkbox("Monthly ratios")
 if ratio_monthly:
    st.header("Monthly ratios")
-   df_stack=pd.DataFrame(monthly_ratios, index=months)
+   df_stack=pd.DataFrame(monthly_ratios)
    st.write(df_stack)
    fig = px.bar(df_stack, x = 'Attrition_Flag', y = 'Counts', color = 
     'Education_Level', barmode = 'stack')
