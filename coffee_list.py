@@ -133,6 +133,28 @@ if coffees_cumulated:
     st.plotly_chart(fig4, use_container_width=True)
 
 
+      
+if ratio_monthly:
+   col2.header("Monthly ratios")
+   
+   temp=[]
+   for i in range(len(months)):
+      temp1=[]
+      temp1.append(months[i])
+      for j in range(len(names)):
+         temp1.append(monthly_ratios[j][i])
+      temp.append(temp1)
+   temp2=[]
+   temp2.append("months")
+   for i in range(len(names)):
+      temp2.append(names[i])
+   
+   df_stack=pd.DataFrame(temp, columns = temp2, index = months)
+   fig4 = px.bar(df_stack, x=names, y = months, barmode = 'relative', labels={"y":"", "value":"Percentage", "variable":"drinkers"})#, text='value', text_auto=True)
+   col2.plotly_chart(fig4, use_container_width=True)
+      
+      
+      
     
 #total_points = st.slider("Number of points in spiral", 1, 5000, 2000)
 #num_turns = st.slider("Number of turns in spiral", 1, 100, 9)
