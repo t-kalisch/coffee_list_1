@@ -7,7 +7,7 @@ import numpy as npy
 import matplotlib.pyplot as plt
 import datetime
 from datetime import date
-import plotly.figure_factory as ff
+import plotly
 import plotly.graph_objects as go
 import plotly.express as px
 #from data_collection import *
