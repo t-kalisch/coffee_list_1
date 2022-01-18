@@ -147,11 +147,11 @@ if ratio_monthly:                                                          #with
 
 
 #-------------------------------------------------------------------------------------------------------------- absolute and relative correlations (bubble charts)
-col3, col4 = st.columns([1,1])                        #setting up two columns for narrower charts  
+ 
 correlation_abs = st.sidebar.checkbox("Correlation")
 if correlation_abs:
    st.header("Correlation diagrams")
-   
+   col3, col4 = st.columns([1,1])                        #setting up two columns for narrower charts 
    temp=[]
    temp1=[]
    temp2=[]
