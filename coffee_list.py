@@ -80,14 +80,18 @@ if coffees_monthly:
     fig2 = px.bar(df, x="total", y="months", title="Total number of coffees per month", text_auto=True)
     st.plotly_chart(fig2, use_container_width=True)
 
+      
+      
 ratio_monthly = st.sidebar.checkbox("Monthly ratios")
 if ratio_monthly:
    st.header("Monthly ratios")
-   df_stack=pd.DataFrame(monthly_ratios)
+   df_stack=pd.DataFrame(monthly_ratios, columns=months, index=names)
    st.write(df_stack)
    fig = px.bar(df_stack, x = 'Attrition_Flag', y = 'Counts', color = 
     'Education_Level', barmode = 'stack')
     
+      
+      
 coffees_total = st.sidebar.checkbox("Total coffees")
 if coffees_total:
     st.header("Total coffees")
