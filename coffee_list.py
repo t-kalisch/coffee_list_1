@@ -120,7 +120,7 @@ if ratio_monthly:
       temp2.append(names[i])
    
    df_stack=pd.DataFrame(temp, columns = temp2, index = months)
-   fig4 = px.bar(df_stack, x=names, y = months, barmode = 'relative', labels={"y":"", "value":"percentage", "variable":"drinkers"})#, text='value', text_auto=True)
+   fig4 = px.bar(df_stack, x=names, y = months, barmode = 'relative', labels={"y":"", "value":"Percentage", "variable":"drinkers"})#, text='value', text_auto=True)
    col2.plotly_chart(fig4, use_container_width=True)   
 
 #-------------------------------------------------------------------------------------------------------------- cumulated coffees monthly (line chart)
