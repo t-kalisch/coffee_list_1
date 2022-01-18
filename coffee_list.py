@@ -94,9 +94,9 @@ if coffees_monthly:
     for i in range(len(names)):
         temp2.append(names[i])
    
-   df_stack=pd.DataFrame(temp, columns = temp2, index = months)
-   fig4 = px.bar(df_stack, x=names, y = months, barmode = 'stack', labels={"y":"", "value":"percentage", "variable":"drinkers"})
-   col2.plotly_chart(fig4, use_container_width=True)
+    df_stack=pd.DataFrame(temp, columns = temp2, index = months)
+    fig4 = px.bar(df_stack, x=names, y = months, barmode = 'stack', labels={"y":"", "value":"percentage", "variable":"drinkers"})
+    col2.plotly_chart(fig4, use_container_width=True)
       
 #-------------------------------------------------------------------------------------------------------------- monthly ratios (stacked bar chart)
 ratio_monthly = st.sidebar.checkbox("Monthly ratios")
