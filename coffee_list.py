@@ -157,11 +157,11 @@ if correlation_abs:
    for i in range(len(names)):
        temp2.append(i+1)
    for j in range(len(names)):
-       temp.append(temp1)
+       temp.append(temp2)
    
    df = pd.DataFrame(temp, columns=temp2, index=temp2)
    col2.dataframe(df)
-   fig5 = px.scatter(df, size='value', y='index', x=df.index)
+   fig5 = px.scatter(df, size='value', x=df.index)
    col1.plotly_chart(fig5, use_container_width=True)
 
    
