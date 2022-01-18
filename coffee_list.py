@@ -33,7 +33,7 @@ st.sidebar.title("Available diagrams:")
 monthly_coffees1=[]
 monthly_coffees=[[19, 9, 16, 19, 29, 31, 32, 30, 14, 41, 39, 34, 37, 24, 10], [15, 6, 6, 20, 29, 20, 24, 25, 29, 22, 32, 30, 35, 18, 12], [13, 6, 12, 16, 25, 35, 28, 37, 31, 27, 36, 30, 22, 14, 0], [10, 3, 7, 12, 27, 36, 37, 15, 22, 44, 10, 6, 4, 7, 1], [18, 1, 18, 21, 34, 35, 35, 26, 21, 43, 43, 27, 36, 22, 9], [0, 0, 0, 0, 19, 27, 23, 9, 5, 16, 22, 17, 26, 17, 0], [0, 0, 0, 0, 0, 12, 18, 8, 5, 13, 2, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0]]
 total_coffees=[372, 314, 328, 242, 382, 183, 58, 1, 3]
-names=['month','TK','PB','NV','DB','FLG','SHK','TB','TT','RS']
+names=['TK','PB','NV','DB','FLG','SHK','TB','TT','RS']
 months=["Nov '20","Dec '20", "Jan '21", "Feb '21", "Mar '21", "Apr '21", "May '21", "Jun '21", "Jul '21", "Aug '21", "Sep '21", "Oct '21", "Nov '21", "Dec '21", "Jan '22"]
 #months=['Nov 20','Dec 20','Jan 21','Feb 21','Mar 21','Apr 21','May 21','Jun 21','Jul 21','Aug 21','Sep 21','Oct 21','Nov 21','Dec 21','Jan 22']
 cumulated_coffees1=[]
@@ -41,7 +41,6 @@ cumulated_coffees=[[19,28,44,63,92,121,153,183,197,238,277,312,349,372,372],[15,
 
 for i in range(15):
     temp=[]
-    temp.append(months[i])
     for j in range(len(monthly_coffees)):
         temp.append(monthly_coffees[j][i])
     monthly_coffees1.append(temp)
