@@ -155,11 +155,13 @@ if correlation_abs:
    temp1=[]
    for i in range(len(names)):
        for j in range(len(names)):
-           temp1.append(i+1)
+           temp=[]
+           temp.append(i+1)
            temp.append(j+1)
-   temp2=[]
-   temp2.append(temp1)
-   temp2.append(temp)
+           temp2.append(temp)
+   #temp2=[]
+   #temp2.append(temp1)
+   #temp2.append(temp)
    
    temp3=[]
    for i in range(len(corr_abs)):
