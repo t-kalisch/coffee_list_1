@@ -101,7 +101,7 @@ if ratio_monthly:
    
    df_stack=pd.DataFrame(temp, columns = temp2, index = months)
    fig4 = px.bar(df_stack, x=names, y = months, barmode = 'stack', labels={"y":"", "value":"percentage", "variable":"drinkers"})
-   st.plotly_chart(fig4)
+   st.plotly_chart(fig4, use_container_width=True)
     
       
 #-------------------------------------------------------------------------------------------------------------- total coffees (pie chart)
@@ -117,7 +117,7 @@ if coffees_total:
         temp.append(temp1)
     df = pd.DataFrame(temp, columns={"names","total"}, index=names)              #total coffees pie chart
     fig3 = go.Figure(go.Pie(labels = names, values = total_coffees, sort=False))
-    st.plotly_chart(fig3)
+    st.plotly_chart(fig3, use_container_width=True)
 
     
 
