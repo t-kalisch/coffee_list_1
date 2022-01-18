@@ -76,7 +76,7 @@ if coffees_monthly:
       
       
       
-    fig = px.scatter.line(df, x="", y="number of coffees", title="Number of coffees per month per person")
+    fig = px.scatter(df, x="", y="number of coffees", title="Number of coffees per month per person")
     st.plotly_chart(fig)
        
     
