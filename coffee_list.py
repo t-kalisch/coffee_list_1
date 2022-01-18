@@ -166,14 +166,14 @@ if correlation_abs:
    
    temp3=[]
    for i in range(len(corr_abs)):
-      #for j in range(len(corr_abs[i])):
-      #   temp1.append(corr_abs[i][j])
-      temp3.append(corr_abs[i][0])
+      for j in range(len(corr_abs[i])):
+         temp3.append(corr_abs[i][j])
+      #temp3.append(corr_abs[i][0])
    size_corr = pd.DataFrame(corr_abs, columns=names, index=names)
    #col2.dataframe(size_corr)
    df = pd.DataFrame(temp2, columns={'x-values','y-values'})
    col2.dataframe(df)
-   fig5 = px.scatter(df, x='x-values', y='y-values')
+   fig5 = px.scatter(df, x='x-values', y='y-values', size=temp3)
    fig5.update_layout(showlegend=False)
    col1.plotly_chart(fig5, use_container_width=True)
 
