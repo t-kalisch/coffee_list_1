@@ -184,6 +184,7 @@ if correlation_abs:
            temp=[]
            temp.append(i+1)
            temp.append(j+1)
+           temp.append(corr_abs[i][j]/total_coffees[i])
            temp2.append(temp)
 
    size_corr=[]
@@ -191,9 +192,9 @@ if correlation_abs:
       for j in range(len(corr_abs[i])):
          size_corr.append(corr_abs[i][j]/total_coffees[i])           #!!!!  Calculates relative correlation; uses total_coffees  !!!!
       #temp3.append(corr_abs[i][0])
-   df = pd.DataFrame(temp2, columns={'x-values','y-values'})
+   df = pd.DataFrame(temp2, columns={'x-values','y-values','size'})
    
-   fig5 = px.scatter(df, x='x-values', y='y-values', size=size_corr, labels={"x-values":"", "y-values":""}, title="Absolute correlation", color="size")
+   fig5 = px.scatter(df, x='x-values', y='y-values', size='size', labels={"x-values":"", "y-values":""}, title="Absolute correlation", color='size')
    fig5.update_layout(showlegend=False, xaxis=dict(tickmode = 'array', tickvals = tickval_num, ticktext = names), yaxis=dict(tickmode = 'array', tickvals = tickval_num, ticktext = names))
    col2.plotly_chart(fig5, use_container_width=True)
 
