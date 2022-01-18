@@ -85,8 +85,8 @@ if coffees_monthly:
 coffees_total = st.sidebar.checkbox("Total coffees")
 if coffees_total:
     st.header("Total coffees")
-    fig = go.Figure(go.Pie(labels = names,values = total_coffees,hoverinfo = "label+percent",textinfo = "value"))
-    st.plotly_chart(fig)
+    fig3 = px.Pie(names = names,values = total_coffees,)
+    st.plotly_chart(fig3)
     
 
 
