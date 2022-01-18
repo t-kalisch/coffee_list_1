@@ -164,7 +164,7 @@ if correlation_abs:
       #   temp1.append(corr_abs[i][j])
       temp1.append(corr_abs[i][0])
    size = pd.DataFrame(corr_abs)
-   col2.datafrage(size)
+   col2.dataframe(size)
    df = pd.DataFrame(temp, columns=temp1, index=temp1)
    #col2.dataframe(df)
    fig5 = px.scatter(df, size=temp1, x=df.index, y=names)
