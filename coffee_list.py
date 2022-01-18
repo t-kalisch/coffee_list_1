@@ -78,8 +78,7 @@ if coffees_monthly:
       
       
       
-    #chart = (getattr(alt.Chart(data), "mark_" + chart_type)().encode(alt.X("months", title=""),alt.Y("df", title=""),alt.Color("variable", title="", type="nominal"), alt.Tooltip(["names", "df", "variable"]),opacity=opacity,).interactive()
-      
+   st.plotly_chart(df, use_container_width=False, sharing="streamlit")
        
     
 coffees_total = st.sidebar.checkbox("Total coffees")
