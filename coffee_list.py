@@ -82,7 +82,7 @@ if coffees_monthly:
     st.plotly_chart(fig2, use_container_width=True)
     
     
-col1, col2 = st.columns([1,1])                        #setting up two columns for narrower charts     
+col1, col2 = st.columns([2,1])                        #setting up two columns for narrower charts     
 #-------------------------------------------------------------------------------------------------------------- monthly ratios (stacked bar chart)
 ratio_monthly = st.sidebar.checkbox("Monthly ratios")
 if ratio_monthly:
