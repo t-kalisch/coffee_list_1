@@ -84,8 +84,7 @@ if coffees_total:
     st.header("Total coffees")
     st.pyplot(fig1)
       
-    alt.Chart(total_coffees).mark_arc().encode(
-    theta=alt.Theta(field="value", type="quantitative"),color=alt.Color(field="category", type="nominal"),)
+    alt.Chart(total_coffees).mark_arc().encode(theta=alt.Theta(field="total_coffees", type="quantitative"),color=alt.Color(field="names", type="nominal"))
 
 coffees_cumulated = st.sidebar.checkbox("Cumulated coffees")
 if coffees_cumulated:
