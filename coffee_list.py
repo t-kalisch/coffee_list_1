@@ -77,7 +77,7 @@ if coffees_monthly:
          temp1.append(temp)
     
     df = pd.DataFrame(temp1, columns={"total","months"})              #total coffees per month)
-    fig2 = px.bar(df, x="total", y="months", title="Total number of coffees per month")
+    fig2 = px.bar(df, x="total", y="months", title="Total number of coffees per month", text_auto=True)
     st.plotly_chart(fig2, use_container_width=True)
 
        
