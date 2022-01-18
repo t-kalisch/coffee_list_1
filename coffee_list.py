@@ -104,37 +104,7 @@ if coffees_total:
 
 #-------------------------------------------------------------------------------------------------------------- monthly ratios (stacked bar chart)
 ratio_monthly = st.sidebar.checkbox("Monthly ratios")
-if ratio_monthly:
-   col2.header("Monthly ratios")
-   
-   temp=[]
-   for i in range(len(months)):
-      temp1=[]
-      temp1.append(months[i])
-      for j in range(len(names)):
-         temp1.append(monthly_ratios[j][i])
-      temp.append(temp1)
-   temp2=[]
-   temp2.append("months")
-   for i in range(len(names)):
-      temp2.append(names[i])
-   
-   df_stack=pd.DataFrame(temp, columns = temp2, index = months)
-   fig4 = px.bar(df_stack, x=names, y = months, barmode = 'relative', labels={"y":"", "value":"Percentage", "variable":"drinkers"})#, text='value', text_auto=True)
-   col2.plotly_chart(fig4, use_container_width=True)   
-
-#-------------------------------------------------------------------------------------------------------------- cumulated coffees monthly (line chart)
-coffees_cumulated = st.sidebar.checkbox("Cumulated coffees")
-if coffees_cumulated:
-    st.header("Cumulated coffees")
-    
-    df = pd.DataFrame(cumulated_coffees1, columns=names, index=months)    #coffees per month per person
-    fig4 = px.line(df, title="Number of coffees per month per person", labels={"variable":"drinkers", "index":"", "value":"Number of coffees"})
-    st.plotly_chart(fig4, use_container_width=True)
-
-
-      
-if ratio_monthly:
+if ratio_monthly:                                                          #with inverted months (top: Nov '20, bottom: now)
    col2.header("Monthly ratios")
    
    months_inv=[]
@@ -154,6 +124,37 @@ if ratio_monthly:
    df_stack=pd.DataFrame(temp, columns = temp2, index = months_inv)
    fig4 = px.bar(df_stack, x=names, y = months_inv, barmode = 'relative', labels={"y":"", "value":"Percentage", "variable":"drinkers"})#, text='value', text_auto=True)
    col2.plotly_chart(fig4, use_container_width=True)
+#if ratio_monthly:                                                          #with non-inverted months (top: now, bottom: Nov '20)
+#   col2.header("Monthly ratios")
+#   
+#   temp=[]
+#   for i in range(len(months)):
+#      temp1=[]
+#      temp1.append(months[i])
+#      for j in range(len(names)):
+#         temp1.append(monthly_ratios[j][i])
+#      temp.append(temp1)
+#   temp2=[]
+#   temp2.append("months")
+#   for i in range(len(names)):
+#      temp2.append(names[i])
+#   
+#   df_stack=pd.DataFrame(temp, columns = temp2, index = months)
+#   fig4 = px.bar(df_stack, x=names, y = months, barmode = 'relative', labels={"y":"", "value":"Percentage", "variable":"drinkers"})#, text='value', text_auto=True)
+#   col2.plotly_chart(fig4, use_container_width=True)   
+
+#-------------------------------------------------------------------------------------------------------------- cumulated coffees monthly (line chart)
+coffees_cumulated = st.sidebar.checkbox("Cumulated coffees")
+if coffees_cumulated:
+    st.header("Cumulated coffees")
+    
+    df = pd.DataFrame(cumulated_coffees1, columns=names, index=months)    #coffees per month per person
+    fig4 = px.line(df, title="Number of coffees per month per person", labels={"variable":"drinkers", "index":"", "value":"Number of coffees"})
+    st.plotly_chart(fig4, use_container_width=True)
+
+
+      
+
       
       
       
