@@ -146,14 +146,16 @@ if ratio_monthly:                                                          #with
 #   col2.plotly_chart(fig4, use_container_width=True)
 
 
+#-------------------------------------------------------------------------------------------------------------- absolute correlation (bubble chart)
 correlation_abs = st.sidebar.checkbox("Absolute correlation")
 if correlation_abs:
    col1.header("Absolute correlation")
    
    df = pd.DataFrame(corr_abs, columns=names, index=names)
-   fig5 = px.scatter(df)
+   fig5 = px.scatter(df, size='value')
    col1.plotly_chart(fig5, use_container_width=True)
 
+   
 #-------------------------------------------------------------------------------------------------------------- cumulated coffees monthly (line chart)
 coffees_cumulated = st.sidebar.checkbox("Cumulated coffees")
 if coffees_cumulated:
