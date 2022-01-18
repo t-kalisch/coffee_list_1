@@ -85,7 +85,21 @@ if coffees_monthly:
 ratio_monthly = st.sidebar.checkbox("Monthly ratios")
 if ratio_monthly:
    st.header("Monthly ratios")
-   df_stack=pd.DataFrame(monthly_ratios, columns=months, index=names)
+   
+   temp=[]
+   for i in range(len(months)):
+      temp1=[]
+      for j in range(len(names)):
+         temp.append(months[i])
+         temp1.append(monthly_ratios[j][i])
+      temp.append(temp1)
+   temp2=[]
+   temp2.append("months")
+   for i in range(len(names)):
+      temp2.append(names[i])
+   st.write(temp2)
+   st.write(temp1)
+   df_stack=pd.DataFrame(temp, columns=temp2, index=names)
    st.write(df_stack)
    fig4 = px.bar(df_stack, barmode = 'stack')
    st.plotly_chart(fig4)
