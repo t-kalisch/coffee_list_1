@@ -9,6 +9,7 @@ import datetime
 from datetime import date
 import plotly.figure_factory as ff
 import plotly.graph_objects as go
+import plotly.express as px
 #from data_collection import *
 
 
@@ -75,7 +76,7 @@ if coffees_monthly:
       
       
       
-    fig = go.Figure(go.scatter.Line(data_frame = df))#,values = df,textinfo = "value"))
+    fig = go.Figure(px.Line(df))#,values = df,textinfo = "value"))
     st.plotly_chart(fig)
        
     
