@@ -91,7 +91,8 @@ if coffees_total:
         temp1=[]
         temp1.append(names[i])
         temp1.append(total_coffees[i])
-    df = pd.DataFrame(temp1, columns={"names","total"}, index=names)
+        temp.append(temp1)
+    df = pd.DataFrame(temp, columns={"names","total"}, index=names)
     st.dataframe(df)
     fig3 = px.pie(df, names = names, values="total")
     #fig3 = px.pie(names = names,values = total_coffees, sort=False)
