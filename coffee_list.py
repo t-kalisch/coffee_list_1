@@ -155,8 +155,8 @@ if correlation_abs:
    temp1=[]
    for i in range(len(names)):
        for j in range(len(names)):
-         temp1.append(i+1)
-            temp.append(j+1)
+           temp1.append(i+1)
+           temp.append(j+1)
    temp2=[]
    temp2.append(temp1)
    temp2.append(temp)
@@ -170,7 +170,7 @@ if correlation_abs:
    col2.dataframe(size_corr)
    df = pd.DataFrame(temp2, columns=temp1, index=temp1)
    col2.dataframe(df)
-   fig5 = px.scatter(df, size=size_corr, x=df.index, y=names)
+   fig5 = px.scatter(df, x=df.index, y=names)
    fig5.update_layout(showlegend=False)
    col1.plotly_chart(fig5, use_container_width=True)
 
