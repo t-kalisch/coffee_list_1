@@ -67,7 +67,7 @@ coffees_monthly = st.sidebar.checkbox("Coffees per month")
 if coffees_monthly:
     st.header("Coffees per month")                           
     df = pd.DataFrame(monthly_coffees1, columns=names, index=months)    #coffees per month per person
-    fig1 = px.line(df, title="Number of coffees per month per person")
+    fig1 = px.line(df, title="Number of coffees per month per person", labels={"variable":"drinkers", "index":"", "value":"Number of coffees"})
     st.plotly_chart(fig1, use_container_width=True)
     
     temp1=[]
@@ -78,7 +78,7 @@ if coffees_monthly:
          temp1.append(temp)
     
     df = pd.DataFrame(temp1, columns={"months","total"})              #total coffees per month)
-    fig2 = px.bar(df, x="total", y="months", title="Total number of coffees per month", text_auto=True)
+    fig2 = px.bar(df, x="total", y="months", title="Total number of coffees per month", labels={"months":"Number of coffees", "total":""}, text_auto=True)
     st.plotly_chart(fig2, use_container_width=True)
 
       
@@ -127,7 +127,7 @@ if coffees_cumulated:
     st.header("Cumulated coffees")
     
     df = pd.DataFrame(cumulated_coffees1, columns=names, index=months)    #coffees per month per person
-    fig4 = px.line(df, title="Number of coffees per month per person")
+    fig4 = px.line(df, title="Number of coffees per month per person", labels={"variable":"drinkers", "index":"", "value":"Number of coffees"})
     st.plotly_chart(fig4, use_container_width=True)
 
 
