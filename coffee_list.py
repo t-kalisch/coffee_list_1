@@ -187,7 +187,7 @@ if correlation_abs:
    df = pd.DataFrame(temp2, columns={'x-values','y-values','size'})
    
    fig5 = px.scatter(df, x='x-values', y='y-values', size='size', labels={"x-values":"", "y-values":""}, title="Absolute correlation", color='size')#, text='size')
-   fig5.update_layout(title_x=1, showlegend=False, xaxis=dict(tickmode = 'array', tickvals = tickval_num, ticktext = names), yaxis=dict(tickmode = 'array', tickvals = tickval_num, ticktext = names))
+   fig5.update_layout(title_font_size=16, showlegend=False, xaxis=dict(tickmode = 'array', tickvals = tickval_num, ticktext = names), yaxis=dict(tickmode = 'array', tickvals = tickval_num, ticktext = names))
    col4.plotly_chart(fig5, use_container_width=True)
 
    
