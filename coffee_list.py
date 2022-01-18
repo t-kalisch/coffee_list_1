@@ -156,7 +156,7 @@ if correlation_abs:
        temp1=[]
        temp1.append(i+1)
        for j in range(len(names)):
-           temp1.append(corr_abs[i][j]
+           temp1.append(corr_abs[i][j])
        temp.append(temp1)
    
    df = pd.DataFrame(temp, columns=names, index=names)
