@@ -32,7 +32,7 @@ user_pw = st.sidebar.text_input(label="", type="password", placeholder="Password
 login = st.sidebar.button("Log In", help="Log in with your username and password", on_click=log_in(user, user_pw))
 st.sidebar.title("Available diagrams:")
 
-monthly_coffees_total=[]
+monthly_coffees_total=[75,25,59,88,163,196,197,150,127,206,184,144,163,103,32]
 monthly_coffees1=[]
 monthly_coffees=[[19, 9, 16, 19, 29, 31, 32, 30, 14, 41, 39, 34, 37, 24, 10], [15, 6, 6, 20, 29, 20, 24, 25, 29, 22, 32, 30, 35, 18, 12], [13, 6, 12, 16, 25, 35, 28, 37, 31, 27, 36, 30, 22, 14, 0], [10, 3, 7, 12, 27, 36, 37, 15, 22, 44, 10, 6, 4, 7, 1], [18, 1, 18, 21, 34, 35, 35, 26, 21, 43, 43, 27, 36, 22, 9], [0, 0, 0, 0, 19, 27, 23, 9, 5, 16, 22, 17, 26, 17, 0], [0, 0, 0, 0, 0, 12, 18, 8, 5, 13, 2, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0]]
 total_coffees=[372, 314, 328, 242, 382, 183, 58, 1, 3]
@@ -54,13 +54,6 @@ for i in range(15):
         temp.append(cumulated_coffees[j][i])
     cumulated_coffees1.append(temp)
 
-for i in range(len(monthly_coffees1)):
-    temp=0
-    for j in range(len(monthly_coffees1[i])):
-        temp+=monthly_coffees1[i][j]
-    monthly_coffees_total.append(temp)
-st.write(monthly_coffees_total)
-
 #col1, buff1, col2, buff2, col3 = st.columns([2,1,2,1,1])
 #user = col1.text_input(label="", placeholder="User")
 #user_pw = col2.text_input(label="", type="password", placeholder="pw")
@@ -71,19 +64,14 @@ st.write(monthly_coffees_total)
     
 coffees_monthly = st.sidebar.checkbox("Coffees per month")
 if coffees_monthly:
-    st.header("Coffees per month per person")
+    st.header("Coffees per month per person")                           #coffees per month per person
     df = pd.DataFrame(monthly_coffees1, columns=names, index=months)
-    #st.dataframe(df)
-   
-    #st.write(alt.Chart(df).mark_bar().encode(x=alt.X('months', sort=None),y='monthly_coffees1',))
-      
-   
-    #st.line_chart(df, width=0, height=0, use_container_width=True)
-      
-      
-      
     fig1 = px.line(df, title="Number of coffees per month per person")
     st.plotly_chart(fig1, use_container_width=True)
+    
+    df = pd.DataFrame(monthly_coffees_total, index=months)
+    fig2 = px.bar(df)
+    st.plotly_chart(fig2, use_container_width=True)
 
        
     
