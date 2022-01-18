@@ -7,6 +7,7 @@ import numpy as npy
 import matplotlib.pyplot as plt
 import datetime
 from datetime import date
+import plotly.figure_factory as ff
 #from data_collection import *
 
 
@@ -89,7 +90,8 @@ if coffees_total:
     st.header("Total coffees")
     st.pyplot(fig1)
       
-          
+    fig = go.Figure(go.Pie(labels = names,values = total_coffees,hoverinfo = "label+percent",textinfo = "value"))
+    st.plotly_chart(fig)
     
 
 
