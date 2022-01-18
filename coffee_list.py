@@ -85,7 +85,7 @@ if coffees_monthly:
 coffees_total = st.sidebar.checkbox("Total coffees")
 if coffees_total:
     st.header("Total coffees")
-    
+    col1, col2, = st.columns([1,1])
     temp=[]
     for i in range(len(total_coffees)):
         temp1=[]
@@ -94,7 +94,8 @@ if coffees_total:
         temp.append(temp1)
     df = pd.DataFrame(temp, columns={"names","total"}, index=names)              #total coffees pie chart
     fig3 = go.Figure(go.Pie(labels = names, values = total_coffees, sort=False))
-    st.plotly_chart(fig3)
+    col1.plotly_chart(fig3)
+    col2.plotly_chart(fig3)
     
 
 
