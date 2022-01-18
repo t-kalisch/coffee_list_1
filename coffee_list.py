@@ -102,7 +102,7 @@ coffees_cumulated = st.sidebar.checkbox("Cumulated coffees")
 if coffees_cumulated:
     st.header("Cumulated coffees")
     
-    df = pd.DataFrame(monthly_coffees1, columns=names, index=months)    #coffees per month per person
+    df = pd.DataFrame(cumulated_coffees1, columns=names, index=months)    #coffees per month per person
     fig4 = px.line(df, title="Number of coffees per month per person")
     st.plotly_chart(fig4, use_container_width=True)
 
