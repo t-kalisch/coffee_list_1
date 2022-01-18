@@ -172,8 +172,8 @@ if correlation_abs:
    size_corr = pd.DataFrame(corr_abs, columns=names, index=names)
    #col2.dataframe(size_corr)
    df = pd.DataFrame(temp2)
-   col2.dataframe(df)
-   fig5 = px.scatter(df)
+   col2.dataframe(df, columns={'x-values','y-values'})
+   fig5 = px.scatter(df, x='x-values', y='y-values')
    fig5.update_layout(showlegend=False)
    col1.plotly_chart(fig5, use_container_width=True)
 
