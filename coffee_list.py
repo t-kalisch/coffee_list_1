@@ -80,7 +80,8 @@ if coffees_monthly:
       
       
       
-    st.plotly_chart(monthly_coffees1, use_container_width=False, sharing="streamlit")
+    fig = go.Figure(go.line(labels = names,values = monthly_coffees1,hoverinfo = "label+percent",textinfo = "value"))
+    st.plotly_chart(fig)
        
     
 coffees_total = st.sidebar.checkbox("Total coffees")
