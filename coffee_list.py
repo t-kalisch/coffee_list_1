@@ -78,7 +78,7 @@ if coffees_monthly:
       
       
       
-   st.plotly_chart(df, use_container_width=False, sharing="streamlit")
+    st.plotly_chart(df, use_container_width=False, sharing="streamlit")
        
     
 coffees_total = st.sidebar.checkbox("Total coffees")
