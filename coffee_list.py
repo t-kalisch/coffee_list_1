@@ -65,8 +65,6 @@ coffees_monthly = st.sidebar.checkbox("Coffees per month")
 if coffees_monthly:
     st.header("Coffees per month per person")
     df = pd.DataFrame(monthly_coffees1, columns=names)
-    df.month = df.month.astype("category")
-    df.month.cat.set_categories(months, inplace=True)
     print(df)
    
     #st.write(alt.Chart(df).mark_bar().encode(x=alt.X('months', sort=None),y='monthly_coffees1',))
