@@ -85,7 +85,7 @@ if coffees_monthly:
 coffees_total = st.sidebar.checkbox("Total coffees")
 if coffees_total:
     st.header("Total coffees")
-    col1, col2, = st.columns([1,1])
+    col1, col2, = st.columns([1,2])
     temp=[]
     for i in range(len(total_coffees)):
         temp1=[]
