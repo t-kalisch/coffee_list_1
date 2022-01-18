@@ -151,9 +151,15 @@ correlation_abs = st.sidebar.checkbox("Absolute correlation")
 if correlation_abs:
    col1.header("Absolute correlation")
    
-   df = pd.DataFrame(corr_abs, columns=names, index=names)
+   temp=[]
+   for i in range(len(names)):
+      temp.append(i+1)
+      for j in range(len(names)):
+      temp.append(corr_abs[i][j]
+   
+   df = pd.DataFrame(temp, columns=names, index=names)
    col2.dataframe(df)
-   fig5 = px.scatter(df, size='value', x=names,marker=dict(color=[120, 125, 130, 135, 140, 145], showscale=True))
+   fig5 = px.scatter(df, size='value', x=names,)
    col1.plotly_chart(fig5, use_container_width=True)
 
    
