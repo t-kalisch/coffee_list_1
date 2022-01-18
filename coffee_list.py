@@ -161,9 +161,9 @@ if correlation_abs:
    temp1=[]
    temp2=[]
    tickval_num=[]
-   for i in range(len(names)):
+   for i in range(7):
        tickval_num.append(i+1)
-       for j in range(len(names)):
+       for j in range(7):
            temp=[]
            temp.append(i+1)
            temp.append(j+1)
