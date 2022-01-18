@@ -81,23 +81,8 @@ if coffees_monthly:
     fig2 = px.bar(df, x="total", y="months", title="Total number of coffees per month", labels={"months":"Number of coffees", "total":""}, text_auto=True)
     st.plotly_chart(fig2, use_container_width=True)
     
-    col1, col2 = st.columns([1,1])
-    temp=[]
-    for i in range(len(months)):
-        temp1=[]
-        temp1.append(months[i])
-        for j in range(len(names)):
-            temp1.append(monthly_ratios[j][i])
-        temp.append(temp1)
-    temp2=[]
-    temp2.append("months")
-    for i in range(len(names)):
-        temp2.append(names[i])
-   
-    df_stack=pd.DataFrame(temp, columns = temp2, index = months)
-    fig4 = px.bar(df_stack, x=names, y = months, barmode = 'stack', labels={"y":"", "value":"percentage", "variable":"drinkers"})
-    col2.plotly_chart(fig4, use_container_width=True)
-      
+    
+col1, col2 = st.columns([1,1])                        #setting up two columns for narrower charts     
 #-------------------------------------------------------------------------------------------------------------- monthly ratios (stacked bar chart)
 ratio_monthly = st.sidebar.checkbox("Monthly ratios")
 if ratio_monthly:
@@ -117,7 +102,7 @@ if ratio_monthly:
    
    df_stack=pd.DataFrame(temp, columns = temp2, index = months)
    fig4 = px.bar(df_stack, x=names, y = months, barmode = 'stack', labels={"y":"", "value":"percentage", "variable":"drinkers"})
-   st.plotly_chart(fig4, use_container_width=True)
+   col2.plotly_chart(fig4, use_container_width=True)
     
       
 #-------------------------------------------------------------------------------------------------------------- total coffees (pie chart)
@@ -133,7 +118,7 @@ if coffees_total:
         temp.append(temp1)
     df = pd.DataFrame(temp, columns={"names","total"}, index=names)              #total coffees pie chart
     fig3 = go.Figure(go.Pie(labels = names, values = total_coffees, sort=False))
-    st.plotly_chart(fig3, use_container_width=True)
+    col1.plotly_chart(fig3, use_container_width=True)
 
     
 
