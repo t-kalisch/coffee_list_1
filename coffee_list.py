@@ -92,8 +92,8 @@ if coffees_total:
     st.header("Total coffees")
     st.pyplot(fig1)
       
-    #fig = go.Figure(go.Pie(labels = names,values = total_coffees,hoverinfo = "label+percent",textinfo = "value"))
-    fig = go.Figure(go.Pie(df, x="year", y="lifeExp", title='Life expectancy in Canada')
+    fig = go.Figure(go.Pie(labels = names,values = total_coffees,hoverinfo = "label+percent",textinfo = "value"))
+    #fig = go.Figure(go.Pie(df, x="year", y="lifeExp", title='Life expectancy in Canada')
     st.plotly_chart(fig)
     
 
