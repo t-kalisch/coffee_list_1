@@ -69,7 +69,9 @@ if coffees_monthly:
     fig1 = px.line(df, title="Number of coffees per month per person")
     st.plotly_chart(fig1, use_container_width=True)
     
-    df = pd.DataFrame(monthly_coffees_total, columns={"","total"}, index=months)              #total coffees per month
+    temp=months
+    temp.append(monthly_coffees_total)
+    df = pd.DataFrame(temp, columns={"","total"}, index=months)              #total coffees per month
     st.dataframe(df)
     fig2 = px.bar(df, x="month", y="total", title="Total number of coffees per month")
     st.plotly_chart(fig2, use_container_width=True)
