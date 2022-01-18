@@ -1,5 +1,4 @@
 from collections import namedtuple
-import plotly.express as px
 import altair as alt
 import math
 import pandas as pd
@@ -91,8 +90,9 @@ if coffees_total:
     st.header("Total coffees")
     st.pyplot(fig1)
       
-    fig = px.pie(df, values='total_coffees', names='names')
-    fig.show()
+      
+    st.plotly_chart(total_coffees, use_container_width=False, sharing="streamlit", **kwargs)
+
 
 coffees_cumulated = st.sidebar.checkbox("Cumulated coffees")
 if coffees_cumulated:
