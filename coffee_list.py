@@ -152,15 +152,21 @@ if correlation_abs:
    col1.header("Absolute correlation")
    
    temp=[]
-   temp2=[]
+   temp1=[]
    for i in range(len(names)):
-       temp2.append(i+1)
+       temp1.append(i+1)
    for j in range(len(names)):
-       temp.append(temp2)
+       temp.append(temp1)
    
-   df = pd.DataFrame(temp, columns=temp2, index=temp2)
+   temp1=[]
+   for i in range(len(corr_abs)):
+      for j in range(len(corr_abs[i])):
+         temp1.append(corr_abs[i][j]
+   
+   df = pd.DataFrame(temp, columns=temp1, index=temp1)
    col2.dataframe(df)
-   fig5 = px.scatter(df, x=df.index, y=names)
+   fig5 = px.scatter(df, size=temp1 x=df.index, y=names)
+   fig5.update_layout(showlegend=False)
    col1.plotly_chart(fig5, use_container_width=True)
 
    
