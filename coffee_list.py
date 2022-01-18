@@ -71,7 +71,7 @@ if coffees_monthly:
     
     temp=[]
     temp1=[]
-    for i in range(len(months):
+    for i in range(len(months)):
          temp.append(months[i])
          temp.append(monthly_coffees_total[i])
          temp1.append(temp)
