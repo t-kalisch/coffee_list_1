@@ -147,6 +147,7 @@ if ratio_monthly:                                                          #with
 
 
 #-------------------------------------------------------------------------------------------------------------- absolute and relative correlations (bubble charts)
+col3, col4 = st.columns([1,1])                        #setting up two columns for narrower charts  
 correlation_abs = st.sidebar.checkbox("Correlation")
 if correlation_abs:
    st.header("Correlation diagrams")
@@ -168,7 +169,7 @@ if correlation_abs:
    
    fig5 = px.scatter(df, x='x-values', y='y-values', size='size', labels={"x-values":"", "y-values":""}, title="Absolute correlation", color='size')#, text='size')
    fig5.update_layout(showlegend=False, xaxis=dict(tickmode = 'array', tickvals = tickval_num, ticktext = names), yaxis=dict(tickmode = 'array', tickvals = tickval_num, ticktext = names))
-   col1.plotly_chart(fig5, use_container_width=True)              #absolute correlation
+   col3.plotly_chart(fig5, use_container_width=True)              #absolute correlation
    #                                                  --------------------------------------------------
    temp=[]                                                        #relative correlation
    temp1=[]
@@ -187,7 +188,7 @@ if correlation_abs:
    
    fig5 = px.scatter(df, x='x-values', y='y-values', size='size', labels={"x-values":"", "y-values":""}, title="Absolute correlation", color='size')#, text='size')
    fig5.update_layout(showlegend=False, xaxis=dict(tickmode = 'array', tickvals = tickval_num, ticktext = names), yaxis=dict(tickmode = 'array', tickvals = tickval_num, ticktext = names))
-   col2.plotly_chart(fig5, use_container_width=True)
+   col4.plotly_chart(fig5, use_container_width=True)
 
    
 #-------------------------------------------------------------------------------------------------------------- cumulated coffees monthly (line chart)
