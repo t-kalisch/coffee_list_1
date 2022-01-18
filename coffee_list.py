@@ -70,7 +70,7 @@ if coffees_monthly:
     st.plotly_chart(fig1, use_container_width=True)
     
     df = pd.DataFrame(monthly_coffees_total, index=months)
-    fig2 = px.bar(df)
+    fig2 = px.bar(monthly_coffees_total)
     st.plotly_chart(fig2, use_container_width=True)
 
        
