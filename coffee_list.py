@@ -8,6 +8,7 @@ import matplotlib.pyplot as plt
 import datetime
 from datetime import date
 import plotly.figure_factory as ff
+import plotly.graph_objects as go
 #from data_collection import *
 
 
