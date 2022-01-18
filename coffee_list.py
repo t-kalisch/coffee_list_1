@@ -76,10 +76,9 @@ if coffees_monthly:
       
       
       
-    fig1 = px.line(df, title="Number of coffees per month per person")
-    fig2 = px.line(df)
+    fig1 = px.line(df, x="month", y="number of coffees", title="Number of coffees per month per person")
     st.plotly_chart(fig1)
-    st.plotly_chart(fig2)
+
        
     
 coffees_total = st.sidebar.checkbox("Total coffees")
