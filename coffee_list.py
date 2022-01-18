@@ -85,7 +85,7 @@ if coffees_monthly:
 coffees_total = st.sidebar.checkbox("Total coffees")
 if coffees_total:
     st.header("Total coffees")
-    fig3 = px.pie(names = names,values = total_coffees)
+    fig3 = px.pie(names = names,values = total_coffees, text_auto=True, hoverinfo="label+percent", sort=False)
     st.plotly_chart(fig3)
     
 
