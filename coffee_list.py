@@ -75,7 +75,7 @@ if coffees_monthly:
       
       
       
-    fig = go.Figure(go.Line(line = names)#,values = df,textinfo = "value"))
+    fig = go.Figure(go.Line(line = names))#,values = df,textinfo = "value"))
     st.plotly_chart(fig)
        
     
