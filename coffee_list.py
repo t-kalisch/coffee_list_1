@@ -86,7 +86,7 @@ col1, col2 = st.columns([1,1])                        #setting up two columns fo
 #-------------------------------------------------------------------------------------------------------------- monthly ratios (stacked bar chart)
 ratio_monthly = st.sidebar.checkbox("Monthly ratios")
 if ratio_monthly:
-   st.header("Monthly ratios")
+   col2.header("Monthly ratios")
    
    temp=[]
    for i in range(len(months)):
@@ -108,7 +108,7 @@ if ratio_monthly:
 #-------------------------------------------------------------------------------------------------------------- total coffees (pie chart)
 coffees_total = st.sidebar.checkbox("Total coffees")
 if coffees_total:
-    st.header("Total coffees")
+    col1.header("Total coffees")
 
     temp=[]
     for i in range(len(total_coffees)):
