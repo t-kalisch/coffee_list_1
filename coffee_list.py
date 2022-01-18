@@ -94,7 +94,7 @@ if coffees_total:
         temp.append(temp1)
     df = pd.DataFrame(temp, columns={"names","total"}, index=names)
     st.dataframe(df)
-    fig3 = go.Figure(go.pie(df, names = "names", values="total", sort=False))
+    fig3 = go.Figure(data=[go.pie(df, names = "names", values="total", sort=False)])
     st.plotly_chart(fig3)
     
 
