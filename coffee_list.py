@@ -65,7 +65,6 @@ if coffees_monthly:
     st.header("Coffees per month per person")
     df = pd.DataFrame(monthly_coffees1, columns=names, index=months)
     st.dataframe(df)
-    st.bar_chart(df)
    
     #st.write(alt.Chart(df).mark_bar().encode(x=alt.X('months', sort=None),y='monthly_coffees1',))
       
@@ -75,7 +74,7 @@ if coffees_monthly:
     #df.drop('month_Rank', 1, inplace = True)
     #print(df)
    
-    st.line_chart(data=df, width=0, height=0, use_container_width=True)
+    st.line_chart(df, width=0, height=0, use_container_width=True)
     
 coffees_total = st.sidebar.checkbox("Total coffees")
 if coffees_total:
