@@ -87,7 +87,7 @@ if coffees_total:
     st.header("Total coffees")
     df = pd.DataFrame(total_coffees, columns={"total"}, index=names)
     st.dataframe(df)
-    fig3 = px.pie(df)
+    fig3 = px.pie(df, names = names, values="total")
     #fig3 = px.pie(names = names,values = total_coffees, sort=False)
     st.plotly_chart(fig3)
     
