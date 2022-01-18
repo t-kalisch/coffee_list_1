@@ -67,18 +67,19 @@ coffees_monthly = st.sidebar.checkbox("Coffees per month")
 if coffees_monthly:
     st.header("Coffees per month per person")
     df = pd.DataFrame(monthly_coffees1, columns=names, index=months)
-    st.dataframe(df)
+    #st.dataframe(df)
    
     #st.write(alt.Chart(df).mark_bar().encode(x=alt.X('months', sort=None),y='monthly_coffees1',))
       
    
-    st.line_chart(df, width=0, height=0, use_container_width=True)
+    #st.line_chart(df, width=0, height=0, use_container_width=True)
       
       
       
     fig1 = px.scatter(df, title="Number of coffees per month per person")
     fig2 = px.line(df)
     st.plotly_chart(fig1)
+    st.plotly_chart(fig2)
        
     
 coffees_total = st.sidebar.checkbox("Total coffees")
