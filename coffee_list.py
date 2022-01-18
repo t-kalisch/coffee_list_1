@@ -90,7 +90,7 @@ if ratio_monthly:
    for i in range(len(months)):
       temp1=[]
       for j in range(len(names)):
-         temp.append(months[i])
+         temp1.append(months[i])
          temp1.append(monthly_ratios[j][i])
       temp.append(temp1)
    temp2=[]
