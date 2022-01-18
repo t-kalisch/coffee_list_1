@@ -70,6 +70,7 @@ if coffees_monthly:
     st.header("Coffees per month")                           
     df = pd.DataFrame(monthly_coffees1, columns=names, index=months)    #coffees per month per person
     fig1 = px.line(df, title="Number of coffees per month per person", labels={"variable":"drinkers", "index":"", "value":"Number of coffees"})
+    fig1.update_layout(title_font_size=24)
     st.plotly_chart(fig1, use_container_width=True)
     
     temp1=[]
@@ -81,6 +82,7 @@ if coffees_monthly:
     
     df = pd.DataFrame(temp1, columns={'months','total'})              #total coffees per month)
     fig2 = px.bar(df, x="total", y="months", title="Total number of coffees per month", labels={"months":"Number of coffees", "total":""}, text_auto=True)
+    fig2.update_layout(title_font_size=24)
     st.plotly_chart(fig2, use_container_width=True)
     
     
@@ -100,6 +102,7 @@ if coffees_total:
         temp.append(temp1)
     df = pd.DataFrame(temp, columns={"names","total"}, index=names)              #total coffees pie chart
     fig3 = go.Figure(go.Pie(labels = names, values = total_coffees, sort=False, hole=.4))
+    fig3.update_layout(title_font_size=24)
     col1.plotly_chart(fig3, use_container_width=True)
 
 
@@ -125,6 +128,7 @@ if ratio_monthly:                                                          #with
    
    df_stack=pd.DataFrame(temp, columns = temp2, index = months_inv)
    fig4 = px.bar(df_stack, x=names, y = months_inv, barmode = 'relative', labels={"y":"", "value":"Percentage", "variable":"drinkers"})#, text='value', text_auto=True)
+   fig4.update_layout(title_font_size=24)
    col2.plotly_chart(fig4, use_container_width=True)
 #if ratio_monthly:                                                          #with non-inverted months (top: now, bottom: Nov '20)
 #   col2.header("Monthly ratios")
@@ -143,6 +147,7 @@ if ratio_monthly:                                                          #with
 #   
 #   df_stack=pd.DataFrame(temp, columns = temp2, index = months)
 #   fig4 = px.bar(df_stack, x=names, y = months, barmode = 'relative', labels={"y":"", "value":"Percentage", "variable":"drinkers"})#, text='value', text_auto=True)
+#   fig4.update_layout(title_font_size=24)
 #   col2.plotly_chart(fig4, use_container_width=True)
 
 
@@ -168,7 +173,7 @@ if correlation_abs:
    df = pd.DataFrame(temp2, columns={'x-values','y-values','size'})
    
    fig5 = px.scatter(df, x='x-values', y='y-values', size='size', labels={"x-values":"", "y-values":""}, title="Absolute correlation", color='size')#, text='size')
-   fig5.update_layout(showlegend=False, xaxis=dict(tickmode = 'array', tickvals = tickval_num, ticktext = names), yaxis=dict(tickmode = 'array', tickvals = tickval_num, ticktext = names))
+   fig5.update_layout(title_font_size=24, showlegend=False, xaxis=dict(tickmode = 'array', tickvals = tickval_num, ticktext = names), yaxis=dict(tickmode = 'array', tickvals = tickval_num, ticktext = names))
    col3.plotly_chart(fig5, use_container_width=True)              #absolute correlation
    #                                                  --------------------------------------------------
    temp=[]                                                        #relative correlation
@@ -186,9 +191,9 @@ if correlation_abs:
             
    df = pd.DataFrame(temp2, columns={'x-values','y-values','size'})
    
-   fig5 = px.scatter(df, x='x-values', y='y-values', size='size', labels={"x-values":"", "y-values":""}, title="Absolute correlation", color='size')#, text='size')
-   fig5.update_layout(title_font_size=24, showlegend=False, xaxis=dict(tickmode = 'array', tickvals = tickval_num, ticktext = names), yaxis=dict(tickmode = 'array', tickvals = tickval_num, ticktext = names))
-   col4.plotly_chart(fig5, use_container_width=True)
+   fig6 = px.scatter(df, x='x-values', y='y-values', size='size', labels={"x-values":"", "y-values":""}, title="Absolute correlation", color='size')#, text='size')
+   fig6.update_layout(title_font_size=24, showlegend=False, xaxis=dict(tickmode = 'array', tickvals = tickval_num, ticktext = names), yaxis=dict(tickmode = 'array', tickvals = tickval_num, ticktext = names))
+   col4.plotly_chart(fig6, use_container_width=True)
 
    
 #-------------------------------------------------------------------------------------------------------------- cumulated coffees monthly (line chart)
