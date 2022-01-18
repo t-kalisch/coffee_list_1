@@ -70,11 +70,6 @@ if coffees_monthly:
    
     #st.write(alt.Chart(df).mark_bar().encode(x=alt.X('months', sort=None),y='monthly_coffees1',))
       
-    #sorterIndex = dict(zip(months, range(len(months))))
-    #df['month_Rank'] = df['months'].map(sorterIndex)
-    #df.sort_values(['month_Rank'],ascending = [True], inplace = True)
-    #df.drop('month_Rank', 1, inplace = True)
-    #print(df)
    
     st.line_chart(df, width=0, height=0, use_container_width=True)
       
@@ -86,14 +81,7 @@ if coffees_monthly:
     
 coffees_total = st.sidebar.checkbox("Total coffees")
 if coffees_total:
-    fig1, ax1 = plt.subplots()
-    ax1.pie(total_coffees, labels=names, autopct='%1.1f%%',startangle=90)
-    ax1.axis('equal')
-    st.header("Total coffees")
-    st.pyplot(fig1)
-      
     fig = go.Figure(go.Pie(labels = names,values = total_coffees,hoverinfo = "label+percent",textinfo = "value"))
-    #fig = go.Figure(go.Pie(df, x="year", y="lifeExp", title='Life expectancy in Canada')
     st.plotly_chart(fig)
     
 
