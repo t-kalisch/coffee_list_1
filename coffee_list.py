@@ -168,8 +168,6 @@ if correlation_abs:
       for j in range(len(corr_abs[i])):
          size_corr.append(corr_abs[i][j])
       #temp3.append(corr_abs[i][0])
-   size_corr = pd.DataFrame(corr_abs, columns=names, index=names)
-   #col2.dataframe(size_corr)
    df = pd.DataFrame(temp2, columns={'x-values','y-values'})
    col2.dataframe(df)
    fig5 = px.scatter(df, x='x-values', y='y-values', size=size_corr)#, ticktext = df['date'])
