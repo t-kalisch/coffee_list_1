@@ -97,8 +97,7 @@ if coffees_total:
         temp1.append(total_coffees[i])
         temp.append(temp1)
     df = pd.DataFrame(temp, columns={"names","total"}, index=names)              #total coffees pie chart
-    fig3 = px.pie(df, values='total', names='names')
-    #fig3 = go.Figure(go.Pie(labels = names, values = total_coffees, sort=False, hole=.4))
+    fig3 = go.Figure(go.Pie(labels = names, values = total_coffees, sort=False, hole=.4))
     col1.plotly_chart(fig3, use_container_width=True)
 
 
