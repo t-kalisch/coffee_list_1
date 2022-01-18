@@ -157,6 +157,8 @@ if correlation_abs:
        for j in range(len(names)):
            temp1.append(i+1)
            temp.append(j+1)
+   st.write(temp1)
+   st.write(temp)
    temp2=[]
    temp2.append(temp1)
    temp2.append(temp)
