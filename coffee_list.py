@@ -64,13 +64,13 @@ for i in range(15):
     
 coffees_monthly = st.sidebar.checkbox("Coffees per month")
 if coffees_monthly:
-    st.header("Coffees per month per person")                           #coffees per month per person
-    df = pd.DataFrame(monthly_coffees1, columns=names, index=months)
+    st.header("Coffees per month")                           
+    df = pd.DataFrame(monthly_coffees1, columns=names, index=months)    #coffees per month per person
     fig1 = px.line(df, title="Number of coffees per month per person")
     st.plotly_chart(fig1, use_container_width=True)
     
-    df = pd.DataFrame(monthly_coffees_total, index=months)
-    fig2 = px.bar(monthly_coffees_total)
+    df = pd.DataFrame(monthly_coffees_total, index=months)              #total coffees per month
+    fig2 = px.bar(monthly_coffees_total, variable="total" title="Total number of coffees per month")
     st.plotly_chart(fig2, use_container_width=True)
 
        
