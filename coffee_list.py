@@ -92,9 +92,7 @@ if coffees_total:
         temp1.append(names[i])
         temp1.append(total_coffees[i])
         temp.append(temp1)
-    df = pd.DataFrame(temp, columns={"names","total"}, index=names)
-    st.dataframe(df)
-    #fig3 = px.pie(df, names = "names", values="total", sort=False)
+    df = pd.DataFrame(temp, columns={"names","total"}, index=names)              #total coffees pie chart
     fig3 = go.Figure(go.Pie(labels = names, values = total_coffees, sort=False))
     st.plotly_chart(fig3)
     
@@ -103,8 +101,11 @@ if coffees_total:
 coffees_cumulated = st.sidebar.checkbox("Cumulated coffees")
 if coffees_cumulated:
     st.header("Cumulated coffees")
-    df = pd.DataFrame(cumulated_coffees1, columns=names)
-    st.line_chart(data=df, width=0, height=0, use_container_width=True)
+    
+    df = pd.DataFrame(monthly_coffees1, columns=names, index=months)    #coffees per month per person
+    fig4 = px.line(df, title="Number of coffees per month per person")
+    st.plotly_chart(fig4, use_container_width=True)
+
 
     
 #total_points = st.slider("Number of points in spiral", 1, 5000, 2000)
