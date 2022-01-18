@@ -20,7 +20,6 @@ st.set_page_config(page_title="Coffee list",page_icon="chart_with_upwards_trend"
 
 In order to submit a coffee break, you need to be logged in with your username and password. Pauses are then automatically generated for you.
 """
-st.write(plotly.__version__)
    
 def log_in(user, user_pw):
     st.write(user)
@@ -60,7 +59,7 @@ for i in range(len(monthly_coffees1)):
     for j in range(len(monthly_coffees1[i])):
         temp+=monthly_coffees1[i][j]
     monthly_coffees_total.append(temp)
-print(monthly_coffees_total)
+st.write(monthly_coffees_total)
 
 #col1, buff1, col2, buff2, col3 = st.columns([2,1,2,1,1])
 #user = col1.text_input(label="", placeholder="User")
