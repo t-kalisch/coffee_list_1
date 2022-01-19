@@ -174,7 +174,7 @@ if correlation:
    
    fig5 = px.scatter(df, x='x-values', y='y-values', size='size', labels={"x-values":"", "y-values":""}, title="Absolute correlation", color='size', text='size')
    fig5.update_layout(title_font_size=24, showlegend=False, xaxis=dict(tickmode = 'array', tickvals = tickval_num, ticktext = names), yaxis=dict(tickmode = 'array', tickvals = tickval_num, ticktext = names))
-   st.plotly_chart(fig5, use_container_width=True)              #absolute correlation
+   col3.plotly_chart(fig5, use_container_width=True)              #absolute correlation
    #                                                  --------------------------------------------------
    temp=[]                                                        #relative correlation
    temp1=[]
@@ -193,7 +193,7 @@ if correlation:
    
    fig6 = px.scatter(df, x='x-values', y='y-values', size='size', labels={"x-values":"", "y-values":""}, title="Relative correlation", color='size', text='size')
    fig6.update_layout(title_font_size=24, showlegend=False, xaxis=dict(tickmode = 'array', tickvals = tickval_num, ticktext = names), yaxis=dict(tickmode = 'array', tickvals = tickval_num, ticktext = names))
-   st.plotly_chart(fig6, use_container_width=True)
+   col4.plotly_chart(fig6, use_container_width=True)
 
    
 #-------------------------------------------------------------------------------------------------------------- cumulated coffees monthly (line chart)
