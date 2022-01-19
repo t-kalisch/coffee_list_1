@@ -128,7 +128,7 @@ if ratio_monthly:                                                          #with
    
    df_stack=pd.DataFrame(temp, columns = temp2, index = months_inv)
    fig4 = px.bar(df_stack, x=names, y = months_inv, barmode = 'relative', labels={"y":"", "value":"Percentage", "variable":"drinkers"})#, text='value', text_auto=True)
-   fig4.update_layout(title_font_size=24)
+   fig4.update_layout(title_font_size=24, showlegend=False)
    col2.plotly_chart(fig4, use_container_width=True)
 #if ratio_monthly:                                                          #with non-inverted months (top: now, bottom: Nov '20)
 #   col2.header("Monthly ratios")
