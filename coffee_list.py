@@ -153,8 +153,8 @@ if ratio_monthly:                                                          #with
 
 #-------------------------------------------------------------------------------------------------------------- absolute and relative correlations (bubble charts)
  
-correlation_abs = st.sidebar.checkbox("Correlation")
-if correlation_abs:
+correlation = st.sidebar.checkbox("Correlation")
+if correlation:
    st.header("Correlation diagrams")
    col3, col4 = st.columns([1,1])                        #setting up two columns for narrower charts 
    temp=[]
@@ -191,7 +191,7 @@ if correlation_abs:
             
    df = pd.DataFrame(temp2, columns={'x-values','y-values','size'})
    
-   fig6 = px.scatter(df, x='x-values', y='y-values', size='size', labels={"x-values":"", "y-values":""}, title="Absolute correlation", color='size')#, text='size')
+   fig6 = px.scatter(df, x='x-values', y='y-values', size='size', labels={"x-values":"", "y-values":""}, title="Relative correlation", color='size')#, text='size')
    fig6.update_layout(title_font_size=24, showlegend=False, xaxis=dict(tickmode = 'array', tickvals = tickval_num, ticktext = names), yaxis=dict(tickmode = 'array', tickvals = tickval_num, ticktext = names))
    col4.plotly_chart(fig6, use_container_width=True)
 
