@@ -210,16 +210,15 @@ if break_percentage:
     st.header("Percentages of breaks")
     col5,col6 = st.columns([5,3])
     
-    months_detailed=[]
+    months_from_march=[]
     for i in range(len(months)-4):
         months_detailed.append(months[i+4])
-    df = pd.DataFrame(perc_p_m, columns=names, index=months_detailed)
+    df = pd.DataFrame(perc_p_m, columns=names, index=months_from_march)
     fig7 = px.line(df, title="Monthly percentages of breaks", labels={"variable":"drinkers", "index":"", "value":"Percentage"})
     fig7.update_layout(title_font_size=24)
     col5.plotly_chart(fig7, use_container_width=True)
    
     columns_new=[]
-    columns_new.append
     percentage_total=[]
     for i in range(len(names)):
         temp=[]
