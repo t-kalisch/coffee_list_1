@@ -74,7 +74,7 @@ for i in range(15):
 #col3.write("")
 #login = col3.button("Log In", help="Log in with your username and password", on_click=log_in(user, user_pw))
 
-
+col1, col2 = st.columns([1,1])
 #-------------------------------------------------------------------------------------------------------------- monthly coffees, per person + total (line + bar chart)
 coffees_monthly = st.sidebar.checkbox("Coffees per month")
 if coffees_monthly:
@@ -205,11 +205,15 @@ if correlation:
 #-------------------------------------------------------------------------------------------------------------- percentages of breaks (line + bar charts)
 break_percentage = st.sidebar.checkbox("Percentage of breaks")
 if break_percentage:
+    
+    col5,col6 = st.columns([2,1])
+    
     months_detailed=[]
     for i in range(len(months)-4):
         months_detailed.append(months[i+4])
     df = pd.DataFrame(perc_p_m, columns=names, index=months_detailed)
     fig7 = px.line(df, title="Monthly percentages of breaks", labels={"variable":"drinkers", "index":"", "value":"Percentage"})
+    col5.plotly_chart(fig7, use_container_width=True)
    
 #-------------------------------------------------------------------------------------------------------------- cumulated coffees monthly (line chart)
 coffees_cumulated = st.sidebar.checkbox("Cumulated coffees")
