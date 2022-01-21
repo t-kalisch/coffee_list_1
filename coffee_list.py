@@ -29,7 +29,7 @@ def log_in(user, user_pw):
     #start.disabled = False
     
 def submit_holidays(holidays):
-    st.write("Submitted holidays: "+holidays)
+    st.write("Submitted holidays: "+str(holidays))
     
 st.sidebar.header("Sign in:")
 user = st.sidebar.text_input(label="", placeholder="Username")
