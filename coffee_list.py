@@ -43,6 +43,7 @@ if hol:
     sub_hol = col2.button("Submit", on_click = submit_holidays(holidays))
 st.sidebar.title("Available diagrams:")
 
+simple_data=[9, 7, 15, 1879, 720, 66, 9]
 monthly_coffees_total=[75,25,59,88,163,196,197,150,127,206,184,144,163,103,32]
 monthly_coffees1=[]
 monthly_coffees=[[19, 9, 16, 19, 29, 31, 32, 30, 14, 41, 39, 34, 37, 24, 10], [15, 6, 6, 20, 29, 20, 24, 25, 29, 22, 32, 30, 35, 18, 12], [13, 6, 12, 16, 25, 35, 28, 37, 31, 27, 36, 30, 22, 14, 0], [10, 3, 7, 12, 27, 36, 37, 15, 22, 44, 10, 6, 4, 7, 1], [18, 1, 18, 21, 34, 35, 35, 26, 21, 43, 43, 27, 36, 22, 9], [0, 0, 0, 0, 19, 27, 23, 9, 5, 16, 22, 17, 26, 17, 0], [0, 0, 0, 0, 0, 12, 18, 8, 5, 13, 2, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0]]
@@ -74,6 +75,16 @@ for i in range(15):
 #col3.write("")
 #col3.write("")
 #login = col3.button("Log In", help="Log in with your username and password", on_click=log_in(user, user_pw))
+
+
+col1,col2,col3,col4 = st.columns([1,1,1,1])
+col1.write(str(simple_data[0])+" drinkers")
+col1.write(str(simple_data[1])+" active drinkers")
+col2.write(str(simple_data[2])+" months of drinking")
+col3.write(str(simple_data[4])+" coffee breaks")
+col3.write(str(simple_data[3])+" cups of coffee")
+col4.write(str(simple_data[5])+" data sets")
+col4.write(str(simple_data[6])+" diagrams")
 
 
 #-------------------------------------------------------------------------------------------------------------- monthly coffees, per person + total (line + bar chart)
