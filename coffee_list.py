@@ -205,7 +205,10 @@ if correlation:
 #-------------------------------------------------------------------------------------------------------------- percentages of breaks (line + bar charts)
 break_percentage = st.sidebar.checkbox("Percentage of breaks")
 if break_percentage:
-    df = pd.DataFrame(perc_p_m, columns=names, index=months)
+    months_detailed=[]
+    for i in range(len(months)-4):
+        months_detailed.append(months[i+4])
+    df = pd.DataFrame(perc_p_m, columns=names, index=months_detailed)
     fig7 = px.line(df, title="Monthly percentages of breaks", labels={"variable":"drinkers", "index":"", "value":"Percentage"})
    
 #-------------------------------------------------------------------------------------------------------------- cumulated coffees monthly (line chart)
