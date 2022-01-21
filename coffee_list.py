@@ -206,7 +206,7 @@ if correlation:
 #-------------------------------------------------------------------------------------------------------------- percentages of breaks (line + bar charts)
 break_percentage = st.sidebar.checkbox("Percentages of breaks")
 if break_percentage:
-    st.header("Percentages of breaks)
+    st.header("Percentages of breaks")
     col5,col6 = st.columns([5,3])
     
     months_detailed=[]
