@@ -222,7 +222,10 @@ if break_percentage:
         temp.append(i+1)
         for j in range(i-1):
             st.write(j)
+        temp.append("")
         temp.append(perc_tot[i])
+        for j in range(len(names)-i-1):
+            temp.append("")
         percentage_total.append(temp)
     df = pd.DataFrame(percentage_total, columns={"names","percentage"})
     fig8 = px.bar
