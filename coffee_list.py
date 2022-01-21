@@ -39,7 +39,7 @@ hol = st.sidebar.checkbox("Enter holidays")
 if hol:
     st.write("Please enter your holidays")
     col1, col2 = st.columns([2,1])
-    holidays = col1.date_input([])
+    holidays = col1.date_input(value = [])
     sub_hol = col2.button("Submit", on_click = submit_holidays(holidays))
 st.sidebar.title("Available diagrams:")
 
