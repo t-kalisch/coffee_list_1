@@ -218,7 +218,6 @@ if break_percentage:
     fig7.update_layout(title_font_size=24)
     col5.plotly_chart(fig7, use_container_width=True)
    
-    columns_new=[]
     percentage_total=[]
     for i in range(len(names)):
         temp=[]
