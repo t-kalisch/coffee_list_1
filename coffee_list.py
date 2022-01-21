@@ -50,6 +50,7 @@ monthly_ratios=[[25.33,36.0,27.12,21.59,17.9,14.8,16.24,20.0,10.94,19.9,21.31,23
 total_coffees=[372, 314, 328, 242, 382, 183, 58, 1, 3]
 corr_abs=[[0,229,90,123,248,124,37,0,0],[229,1,75,89,205,83,31,0,0],[90,75,160,64,94,64,22,0,0],[123,89,64,21,133,83,40,0,0],[248,205,94,133,20,130,35,0,0],[124,83,64,83,130,25,18,0,0],[37,31,22,40,35,18,11,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0]]
 perc_p_m=[[41.38,37.93,36.21,41.38,44.83,27.59,0.0,0.0,0.0],[43.66,28.17,49.3,52.11,49.3,39.44,16.9,0.0,0.0],[44.44,33.33,38.89,51.39,48.61,31.94,25.0,0.0,0.0],[46.88,39.06,57.81,23.44,40.63,14.06,12.5,0.0,0.0],[25.45,52.73,56.36,40.0,38.18,10.91,09.09,0.0,0.0],[61.19,32.84,40.3,65.67,64.18,23.88,19.4,0.0,0.0],[48.15,39.51,44.44,12.35,51.85,27.16,2.47,0.0,0.0],[56.45,54.84,45.16,9.68,48.39,27.42,0.0,0.0,0.0],[69.81,66.04,39.62,9.43,67.92,49.06,0.0,0.0,5.6],[62.16,48.65,35.14,18.92,59.46,45.95,0.0,3.2,0.0],[11,11,11,11,11,11,0,1,0]]
+perc_tot=[49.4,42.1,44.7,33.4,51.0,29.0,11.0,0.0,0.0]
 names=['TK','PB','NV','DB','FLG','SHK','TB','TT','RS']
 months=["Nov '20","Dec '20", "Jan '21", "Feb '21", "Mar '21", "Apr '21", "May '21", "Jun '21", "Jul '21", "Aug '21", "Sep '21", "Oct '21", "Nov '21", "Dec '21", "Jan '22"]
 cumulated_coffees1=[]
@@ -214,6 +215,17 @@ if break_percentage:
     df = pd.DataFrame(perc_p_m, columns=names, index=months_detailed)
     fig7 = px.line(df, title="Monthly percentages of breaks", labels={"variable":"drinkers", "index":"", "value":"Percentage"})
     col5.plotly_chart(fig7, use_container_width=True)
+   
+    percentage_total=[]
+    for i in range(len(names)):
+        temp=[]
+        temp.append(i+1)
+        for j in range(i):
+            print(1)
+        temp.append(perc_tot[i])
+        percentage_total.append(temp)
+    df = pd.DataFrame(percentage_total, columns={"names","percentage"})
+    fig8 = px.bar
    
 #-------------------------------------------------------------------------------------------------------------- cumulated coffees monthly (line chart)
 coffees_cumulated = st.sidebar.checkbox("Cumulated coffees")
