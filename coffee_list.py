@@ -227,7 +227,8 @@ if break_percentage:
         for j in range(len(names)-i-1):
             temp.append("")
         percentage_total.append(temp)
-    df = pd.DataFrame(percentage_total, columns={"names","percentage"})
+    df = pd.DataFrame(percentage_total, columns=names)
+    col6.write(df)
     fig8 = px.bar
    
 #-------------------------------------------------------------------------------------------------------------- cumulated coffees monthly (line chart)
