@@ -214,7 +214,7 @@ if break_percentage:
         months_detailed.append(months[i+4])
     df = pd.DataFrame(perc_p_m, columns=names, index=months_detailed)
     fig7 = px.line(df, title="Monthly percentages of breaks", labels={"variable":"drinkers", "index":"", "value":"Percentage"})
-    fig8.update_layout(title_font_size=24)
+    fig7.update_layout(title_font_size=24)
     col5.plotly_chart(fig7, use_container_width=True)
    
     columns_new=[]
