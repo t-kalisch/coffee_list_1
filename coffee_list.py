@@ -221,10 +221,9 @@ if break_percentage:
     percentage_total=[]
     for i in range(len(names)):
         temp=[]
-        temp.append(i+1)
         temp.append(perc_tot[i])
         percentage_total.append(temp)
-    df = pd.DataFrame(percentage_total, columns={'names','percentage'})
+    df = pd.DataFrame(percentage_total, columns={'percentage'}, index=names)
     col6.write(df)
     fig8 = px.bar(df, x=names, labels={"y":"", "value":"Percentage", "variable":"drinkers"})#, text='value', text_auto=True)
     fig8.update_layout(title_font_size=24)#, showlegend=False)
