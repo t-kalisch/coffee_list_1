@@ -225,7 +225,7 @@ if break_percentage:
         percentage_total.append(temp)
     df = pd.DataFrame(percentage_total, columns={'percentage'}, index=names)
     col6.write(df)
-    fig8 = px.bar(df, x=names, y='percentage', labels={"y":"", "value":"Percentage", "variable":"drinkers"}, text='value', text_auto=True)
+    fig8 = px.bar(df, x=names, y='percentage', labels={"x":"", "count":"Percentage", "variable":"drinkers"}, text='percentage', text_auto=True)
     fig8.update_layout(title_font_size=24, showlegend=False)
     col6.plotly_chart(fig8, use_container_width=True)
    
