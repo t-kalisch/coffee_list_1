@@ -221,7 +221,7 @@ if break_percentage:
     percentage_total=[]
     for i in range(len(names)):
         temp=[]
-        temp.append(round(perc_tot[i],0))
+        temp.append(round(perc_tot[i],1))
         percentage_total.append(temp)
     df = pd.DataFrame(percentage_total, columns={'percentage'}, index=names)
 
