@@ -21,7 +21,6 @@ st.set_page_config(page_title="Coffee list",page_icon="chart_with_upwards_trend"
 In order to submit a coffee break, you need to be logged in with your username and password. Pauses are then automatically generated for you.
 """
 
-st.date_input("Holidays", [])
 
 def log_in(user, user_pw):
     if user != "":
@@ -29,10 +28,18 @@ def log_in(user, user_pw):
     #st.write(user_pw)
     #start.disabled = False
     
+def submit_holidays(holidays):
+    st.write("Submitted holidays: "+holidays)
+    
 st.sidebar.header("Sign in:")
 user = st.sidebar.text_input(label="", placeholder="Username")
 user_pw = st.sidebar.text_input(label="", type="password", placeholder="Password")
 login = st.sidebar.button("Log In", help="Log in with your username and password", on_click=log_in(user, user_pw))
+hol = st.sidebar.checkbox("Enter holidays")
+if hol:
+    col1, col2 = st.columns([2,1])
+    holidays = col1.date_input("Holidays", [])
+    sub_hol = col2.button("Submit", on_click = submit_holidays(holidays))
 st.sidebar.title("Available diagrams:")
 
 monthly_coffees_total=[75,25,59,88,163,196,197,150,127,206,184,144,163,103,32]
