@@ -20,7 +20,7 @@ st.set_page_config(page_title="Coffee list",page_icon="chart_with_upwards_trend"
 
 In order to submit a coffee break, you need to be logged in with your username and password. Pauses are then automatically generated for you.
 """
-
+start_date, end_date = st.date_picker("Pick a date range", [])
 st.date_input("Holidays", datetime.date(), datetime.date())
 
 def log_in(user, user_pw):
