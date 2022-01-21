@@ -202,10 +202,10 @@ if correlation:
    fig6.update_layout(title_font_size=24, showlegend=False, xaxis=dict(tickmode = 'array', tickvals = tickval_num, ticktext = names), yaxis=dict(tickmode = 'array', tickvals = tickval_num, ticktext = names))
    col4.plotly_chart(fig6, use_container_width=True)
 
+#-------------------------------------------------------------------------------------------------------------- percentages of breaks (line + bar charts)
 break_percentage = st.sidebar.checkbox("Percentage of breaks")
 if break_percentage:
-    
-    df = pd.DataFramge(perc_p_m, columns=names, index=months)
+    df = pd.DataFrame(perc_p_m, columns=names, index=months)
     fig7 = px.line(df, title="Monthly percentages of breaks", labels={"variable":"drinkers", "index":"", "value":"Percentage"})
    
 #-------------------------------------------------------------------------------------------------------------- cumulated coffees monthly (line chart)
