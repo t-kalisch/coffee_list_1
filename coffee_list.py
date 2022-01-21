@@ -204,9 +204,9 @@ if correlation:
    col4.plotly_chart(fig6, use_container_width=True)
 
 #-------------------------------------------------------------------------------------------------------------- percentages of breaks (line + bar charts)
-break_percentage = st.sidebar.checkbox("Percentage of breaks")
+break_percentage = st.sidebar.checkbox("Percentages of breaks")
 if break_percentage:
-    
+    st.header("Percentages of breaks)
     col5,col6 = st.columns([5,3])
     
     months_detailed=[]
@@ -214,6 +214,7 @@ if break_percentage:
         months_detailed.append(months[i+4])
     df = pd.DataFrame(perc_p_m, columns=names, index=months_detailed)
     fig7 = px.line(df, title="Monthly percentages of breaks", labels={"variable":"drinkers", "index":"", "value":"Percentage"})
+    fig8.update_layout(title_font_size=24)
     col5.plotly_chart(fig7, use_container_width=True)
    
     columns_new=[]
@@ -225,7 +226,7 @@ if break_percentage:
         percentage_total.append(temp)
     df = pd.DataFrame(percentage_total, columns={'percentage'}, index=names)
 
-    fig8 = px.bar(df, x=names, y='percentage', title="Total percentage of breaks", labels={"x":"", "count":"Percentage", "variable":"drinkers"}, text='percentage', text_auto=True)
+    fig8 = px.bar(df, x=names, y='percentage', title="Total percentages of breaks", labels={"x":"", "count":"Percentage", "variable":"drinkers"}, text='percentage', text_auto=True)
     fig8.update_layout(title_font_size=24, showlegend=False)
     col6.plotly_chart(fig8, use_container_width=True)
    
