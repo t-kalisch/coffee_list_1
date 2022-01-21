@@ -37,8 +37,9 @@ user_pw = st.sidebar.text_input(label="", type="password", placeholder="Password
 login = st.sidebar.button("Log In", help="Log in with your username and password", on_click=log_in(user, user_pw))
 hol = st.sidebar.checkbox("Enter holidays")
 if hol:
+    st.write("Please enter your holidays")
     col1, col2 = st.columns([2,1])
-    holidays = col1.date_input("Holidays", [])
+    holidays = col1.date_input([])
     sub_hol = col2.button("Submit", on_click = submit_holidays(holidays))
 st.sidebar.title("Available diagrams:")
 
