@@ -220,7 +220,7 @@ if break_percentage:
     for i in range(len(names)):
         temp=[]
         temp.append(i+1)
-        for j in range(i):
+        for j in range(i-1):
             st.write(j)
         temp.append(perc_tot[i])
         percentage_total.append(temp)
