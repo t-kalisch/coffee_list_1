@@ -75,7 +75,7 @@ for i in range(15):
 #col3.write("")
 #login = col3.button("Log In", help="Log in with your username and password", on_click=log_in(user, user_pw))
 
-col1, col2 = st.columns([1,1])
+
 #-------------------------------------------------------------------------------------------------------------- monthly coffees, per person + total (line + bar chart)
 coffees_monthly = st.sidebar.checkbox("Coffees per month")
 if coffees_monthly:
@@ -97,6 +97,7 @@ if coffees_monthly:
     fig2.update_layout(title_font_size=24)
     st.plotly_chart(fig2, use_container_width=True) 
 
+col1, col2 = st.columns([1,1])
 #-------------------------------------------------------------------------------------------------------------- total coffees (pie chart)
 coffees_total = st.sidebar.checkbox("Total coffees")
 if coffees_total:
