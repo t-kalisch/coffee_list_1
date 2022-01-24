@@ -124,8 +124,8 @@ if coffees_monthly:
     #fig2_1 = echarts.init(temp1)
     #option = {xAxis: {type: 'category', data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']},yAxis: {type: 'value'},series: [{data: [150, 230, 224, 218, 135, 147, 260],type: 'line'}]}
 
- #-------------------------------------------------------------------------------------------------------------- weekly coffees and breaks (line chart)
- if c_b_weekly:
+#-------------------------------------------------------------------------------------------------------------- weekly coffees and breaks (line chart)
+if c_b_weekly:
     st.subheader("Weekly breaks and coffees")
     df = pd.DataFrame(coffees_breaks_weekly, columns={'Weekly breaks'},{'Weekly cofees'})
     fig3 = px.line(df, labels={"variable":"", "index":"", "value":""})
