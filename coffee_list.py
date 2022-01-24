@@ -32,17 +32,27 @@ def log_in(user, user_pw):
 def submit_holidays(holidays):
     st.write("Submitted holidays: "+str(holidays))
     
-st.sidebar.header("Sign in:")
-user = st.sidebar.text_input(label="", placeholder="Username")
-user_pw = st.sidebar.text_input(label="", type="password", placeholder="Password")
-login = st.sidebar.button("Log In", help="Log in with your username and password", on_click=log_in(user, user_pw))
-hol = st.sidebar.checkbox("Enter holidays")
+    
+with st.sidebar:   
+    st.header("Sign in:")
+    user = st.text_input(label="", placeholder="Username")
+    user_pw = st.text_input(label="", type="password", placeholder="Password")
+    login = st.button("Log In", help="Log in with your username and password", on_click=log_in(user, user_pw))
+    hol = st.checkbox("Enter holidays")
+    st.title("Available diagrams:")
+    coffees_monthly = st.checkbox("Coffees per month")
+    coffees_total = st.checkbox("Totalratio_monthly = st.sidebar.checkbox("Monthly ratios") coffees")
+    ratio_monthly = st.checkbox("Monthly ratios")
+    correlation = st.checkbox("Correlation")
+    break_percentage = st.checkbox("Percentages of breaks")
+    coffees_cumulated = st.checkbox("Cumulated coffees")
+    
 if hol:
     col1, col2 = st.columns([2,1])
     holidays = col1.date_input("Please enter your holidays", [])
     col2.write(". ")
     sub_hol = col2.button("Submit", on_click = submit_holidays(holidays))
-st.sidebar.title("Available diagrams:")
+
 
 simple_data=[9, 7, 15, 1879, 720, 66, 9]
 monthly_coffees_total=[75,25,59,88,163,196,197,150,127,206,184,144,163,103,32]
@@ -89,7 +99,6 @@ col4.subheader(str(simple_data[6])+" diagrams")
 
 
 #-------------------------------------------------------------------------------------------------------------- monthly coffees, per person + total (line + bar chart)
-coffees_monthly = st.sidebar.checkbox("Coffees per month")
 if coffees_monthly:
     st.subheader("Coffees per month")                           
     df = pd.DataFrame(monthly_coffees1, columns=names, index=months)    #coffees per month per person
@@ -114,7 +123,6 @@ if coffees_monthly:
     
 col1, col2 = st.columns([1,1])
 #-------------------------------------------------------------------------------------------------------------- total coffees (pie chart)
-coffees_total = st.sidebar.checkbox("Total coffees")
 if coffees_total:
     col1.subheader("Total coffees")
 
@@ -132,7 +140,6 @@ if coffees_total:
 
 
 #-------------------------------------------------------------------------------------------------------------- monthly ratios (stacked bar chart)
-ratio_monthly = st.sidebar.checkbox("Monthly ratios")
 if ratio_monthly:                                                          #with inverted months (top: Nov '20, bottom: now)
    col2.subheader("Monthly ratios")
    
@@ -176,8 +183,6 @@ if ratio_monthly:                                                          #with
 
 
 #-------------------------------------------------------------------------------------------------------------- absolute and relative correlations (bubble charts)
- 
-correlation = st.sidebar.checkbox("Correlation")
 if correlation:
    st.subheader("Correlation diagrams")
    col3, col4 = st.columns([1,1])                        #setting up two columns for narrower charts 
@@ -220,7 +225,6 @@ if correlation:
    col4.plotly_chart(fig6, use_container_width=True)
 
 #-------------------------------------------------------------------------------------------------------------- percentages of breaks (line + bar charts)
-break_percentage = st.sidebar.checkbox("Percentages of breaks")
 if break_percentage:
     st.subheader("Percentages of breaks")
     col5,col6 = st.columns([2,1])
@@ -245,7 +249,6 @@ if break_percentage:
     col6.plotly_chart(fig8, use_container_width=True)
    
 #-------------------------------------------------------------------------------------------------------------- cumulated coffees monthly (line chart)
-coffees_cumulated = st.sidebar.checkbox("Cumulated coffees")
 if coffees_cumulated:
     st.subheader("Cumulated coffees")
     
