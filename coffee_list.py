@@ -10,7 +10,7 @@ from datetime import date
 import plotly
 import plotly.graph_objects as go
 import plotly.express as px
-import streamlit_echarts
+import streamlit_echarts as echarts
 #from data_collection import *
 
 
@@ -109,6 +109,9 @@ if coffees_monthly:
     fig2.update_layout(title_font_size=24)
     st.plotly_chart(fig2, use_container_width=True) 
 
+    fig2_1 = echarts.init(temp1)
+    option = {xAxis: {type: 'category', data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']},yAxis: {type: 'value'},series: [{data: [150, 230, 224, 218, 135, 147, 260],type: 'line'}]}
+    
 col1, col2 = st.columns([1,1])
 #-------------------------------------------------------------------------------------------------------------- total coffees (pie chart)
 coffees_total = st.sidebar.checkbox("Total coffees")
