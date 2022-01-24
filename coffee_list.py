@@ -219,7 +219,7 @@ if correlation:
 break_percentage = st.sidebar.checkbox("Percentages of breaks")
 if break_percentage:
     st.header("Percentages of breaks")
-    col5,col6 = st.columns([5,3])
+    col5,col6 = st.columns([2,1])
     
     months_from_march=[]
     for i in range(len(months)-4):
