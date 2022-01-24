@@ -127,7 +127,7 @@ if coffees_monthly:
 #-------------------------------------------------------------------------------------------------------------- weekly coffees and breaks (line chart)
 if c_b_weekly:
     st.subheader("Weekly breaks and coffees")
-    df = pd.DataFrame(coffees_breaks_weekly, columns={'Weekly breaks','Weekly cofees'})
+    df = pd.DataFrame(coffees_breaks_weekly, columns={'Breaks','Coffees'})
     fig3 = px.line(df, labels={"variable":"", "index":"", "value":""})
     st.plotly_chart(fig3, use_container_width=True)
     
