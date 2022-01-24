@@ -90,7 +90,7 @@ col4.subheader(str(simple_data[6])+" diagrams")
 #-------------------------------------------------------------------------------------------------------------- monthly coffees, per person + total (line + bar chart)
 coffees_monthly = st.sidebar.checkbox("Coffees per month")
 if coffees_monthly:
-    st.header("Coffees per month")                           
+    st.subheader("Coffees per month")                           
     df = pd.DataFrame(monthly_coffees1, columns=names, index=months)    #coffees per month per person
     fig1 = px.line(df, title="Number of coffees per month per person", labels={"variable":"drinkers", "index":"", "value":"Number of coffees"})
     fig1.update_layout(title_font_size=24)
@@ -112,7 +112,7 @@ col1, col2 = st.columns([1,1])
 #-------------------------------------------------------------------------------------------------------------- total coffees (pie chart)
 coffees_total = st.sidebar.checkbox("Total coffees")
 if coffees_total:
-    col1.header("Total coffees")
+    col1.subheader("Total coffees")
 
     temp=[]
     for i in range(len(total_coffees)):
@@ -130,7 +130,7 @@ if coffees_total:
 #-------------------------------------------------------------------------------------------------------------- monthly ratios (stacked bar chart)
 ratio_monthly = st.sidebar.checkbox("Monthly ratios")
 if ratio_monthly:                                                          #with inverted months (top: Nov '20, bottom: now)
-   col2.header("Monthly ratios")
+   col2.subheader("Monthly ratios")
    
    months_inv=[]
    temp=[]
@@ -175,7 +175,7 @@ if ratio_monthly:                                                          #with
  
 correlation = st.sidebar.checkbox("Correlation")
 if correlation:
-   st.header("Correlation diagrams")
+   st.subheader("Correlation diagrams")
    col3, col4 = st.columns([1,1])                        #setting up two columns for narrower charts 
    temp=[]
    temp1=[]
@@ -218,7 +218,7 @@ if correlation:
 #-------------------------------------------------------------------------------------------------------------- percentages of breaks (line + bar charts)
 break_percentage = st.sidebar.checkbox("Percentages of breaks")
 if break_percentage:
-    st.header("Percentages of breaks")
+    st.subheader("Percentages of breaks")
     col5,col6 = st.columns([2,1])
     
     months_from_march=[]
@@ -243,7 +243,7 @@ if break_percentage:
 #-------------------------------------------------------------------------------------------------------------- cumulated coffees monthly (line chart)
 coffees_cumulated = st.sidebar.checkbox("Cumulated coffees")
 if coffees_cumulated:
-    st.header("Cumulated coffees")
+    st.subheader("Cumulated coffees")
     
     df = pd.DataFrame(cumulated_coffees1, columns=names, index=months)
     fig10 = px.line(df, title="Number of coffees per month per person", labels={"variable":"drinkers", "index":"", "value":"Number of coffees"})
