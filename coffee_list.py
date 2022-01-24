@@ -10,7 +10,7 @@ from datetime import date
 import plotly
 import plotly.graph_objects as go
 import plotly.express as px
-import streamlit-echarts
+import streamlit_echarts
 #from data_collection import *
 
 
