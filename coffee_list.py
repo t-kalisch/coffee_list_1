@@ -245,7 +245,7 @@ if break_percentage:
         months_from_march.append(months[i+4])
     df = pd.DataFrame(perc_p_m, columns=names, index=months_from_march)
     fig7 = px.line(df, title="Monthly percentages of breaks", labels={"variable":"drinkers", "index":"", "value":"Percentage"})
-    fig7.update_layout(title_font_size=24)
+    fig7.update_layout(title_font_size=24, hovermode="x unified")
     col5.plotly_chart(fig7, use_container_width=True)
    
     percentage_total=[]
@@ -256,7 +256,7 @@ if break_percentage:
     df = pd.DataFrame(percentage_total, columns={'percentage'}, index=names)
 
     fig8 = px.bar(df, x='percentage', y=names, title="Total percentages of breaks", labels={"y":"", "count":"Percentage", "variable":"drinkers"}, text='percentage', text_auto=True, orientation='h')
-    fig8.update_layout(title_font_size=24, showlegend=False, hovermode="x unified")
+    fig8.update_layout(title_font_size=24, showlegend=False)
     col6.plotly_chart(fig8, use_container_width=True)
    
 #-------------------------------------------------------------------------------------------------------------- cumulated coffees monthly (line chart)
