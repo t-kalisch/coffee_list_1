@@ -41,7 +41,7 @@ with st.sidebar:
     hol = st.checkbox("Enter holidays")
     st.title("Available diagrams:")
     coffees_monthly = st.checkbox("Coffees per month")
-    coffees_total = st.checkbox("Totalratio_monthly = st.sidebar.checkbox("Monthly ratios") coffees")
+    coffees_total = st.checkbox("Total coffees")
     ratio_monthly = st.checkbox("Monthly ratios")
     correlation = st.checkbox("Correlation")
     break_percentage = st.checkbox("Percentages of breaks")
