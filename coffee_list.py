@@ -245,7 +245,7 @@ if break_percentage:
         months_from_march.append(months[i+4])
     df = pd.DataFrame(perc_p_m, columns=names, index=months_from_march)
     fig7 = px.line(df, title="Monthly percentages of breaks", labels={"variable":"drinkers", "index":"", "value":"Percentage"})
-    fig7.update_layout(title_font_size=24, hovermode="x unified")
+    fig7.update_layout(title_font_size=24)
     col5.plotly_chart(fig7, use_container_width=True)
    
     percentage_total=[]
