@@ -40,7 +40,8 @@ with st.sidebar:
     login = st.button("Log In", help="Log in with your username and password", on_click=log_in(user, user_pw))
     hol = st.checkbox("Enter holidays")
     st.title("Available diagrams:")
-    coffees_monthly = st.checkbox("Coffees per month")
+    coffees_monthly = st.checkbox("Monthly coffees")
+    c_b_weekly = st.checkbox ("Weekly breaks and coffees")
     coffees_total = st.checkbox("Total coffees")
     ratio_monthly = st.checkbox("Monthly ratios")
     correlation = st.checkbox("Correlation")
@@ -67,6 +68,8 @@ names=['TK','PB','NV','DB','FLG','SHK','TB','TT','RS']
 months=["Nov '20","Dec '20", "Jan '21", "Feb '21", "Mar '21", "Apr '21", "May '21", "Jun '21", "Jul '21", "Aug '21", "Sep '21", "Oct '21", "Nov '21", "Dec '21", "Jan '22"]
 cumulated_coffees1=[]
 cumulated_coffees=[[19,28,44,63,92,121,153,183,197,238,277,312,349,372,372],[15,21,27,47,75,95,119,144,173,195,227,261,296,314,314],[13,19,31,47,72,107,135,172,203,230,266,294,315,328,328],[10,13,20,32,59,96,133,148,170,214,224,230,235,242,242],[18,19,37,58,92,127,162,188,209,252,294,324,360,382,382],[0,0,0,0,19,47,70,79,85,101,123,140,166,183,183],[0,0,0,0,0,12,30,38,43,56,58,58,58,58,58],[0,0,0,0,0,0,0,0,0,0,0,0,0,1,1],[0,0,0,0,0,0,0,0,0,0,0,0,3,3,3]]
+text_weekly=['10/2021', '11/2021', '12/2021', '13/2021', '14/2021', '15/2021', '16/2021', '17/2021', '18/2021', '19/2021', '20/2021', '21/2021', '22/2021', '23/2021', '24/2021', '25/2021', '26/2021', '27/2021', '28/2021', '29/2021', '30/2021', '31/2021', '32/2021', '33/2021', '34/2021', '35/2021', '36/2021', '37/2021', '38/2021', '39/2021', '40/2021', '41/2021', '42/2021', '43/2021', '44/2021', '45/2021', '46/2021', '47/2021', '48/2021', '49/2021', '50/2021', '51/2021', '52/2021', '01/2022', '02/2022', '03/2022', '04/2022']
+coffees_breaks_weekly=[[18, 42], [18, 38], [15, 46], [10, 14], [15, 32], [18, 50], [18, 62], [16, 46], [12, 44], [15, 45], [20, 52], [21, 44], [14, 40], [12, 30], [20, 44], [12, 26], [13, 34], [16, 30], [10, 22], [12, 23], [14, 40], [17, 44], [13, 42], [16, 51], [16, 53], [13, 31], [20, 43], [16, 46], [21, 44], [19, 46], [11, 28], [14, 31], [20, 43], [11, 31], [11, 36], [16, 42], [10, 38], [11, 33], [10, 33], [8, 25], [19, 40], [5, 19], [0, 0], [2, 3], [10, 24], [11, 37], [2, 7]]
 
 for i in range(15):
     temp=[]
@@ -120,6 +123,13 @@ if coffees_monthly:
 
     #fig2_1 = echarts.init(temp1)
     #option = {xAxis: {type: 'category', data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']},yAxis: {type: 'value'},series: [{data: [150, 230, 224, 218, 135, 147, 260],type: 'line'}]}
+
+ #-------------------------------------------------------------------------------------------------------------- weekly coffees and breaks (line chart)
+ if c_b_weekly:
+    st.subheader("Weekly breaks and coffees")
+    df = pd.DataFrame(coffees_breaks_weekly, columns={'Weekly breaks'},{'Weekly cofees'})
+    fig3 = px.line(df, labels={"variable":"", "index":"", "value":""})
+    st.plotly_chart(fig3, use_container_width=True)
     
 col1, col2 = st.columns([1,1])
 #-------------------------------------------------------------------------------------------------------------- total coffees (pie chart)
