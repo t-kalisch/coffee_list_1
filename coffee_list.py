@@ -129,6 +129,7 @@ if c_b_weekly:
     st.subheader("Weekly breaks and coffees")
     df = pd.DataFrame(coffees_breaks_weekly, columns={'Breaks','Coffees'}, index=weeks)
     fig3 = px.line(df, labels={"variable":"", "index":"", "value":""})
+    fig3.update_layout(hovermode="x unified")
     st.plotly_chart(fig3, use_container_width=True)
     
 col1, col2 = st.columns([1,1])
