@@ -256,7 +256,7 @@ if break_percentage:
     df = pd.DataFrame(percentage_total, columns={'percentage'}, index=names)
 
     fig8 = px.bar(df, x='percentage', y=names, title="Total percentages of breaks", labels={"y":"", "count":"Percentage", "variable":"drinkers"}, text='percentage', text_auto=True, orientation='h')
-    fig8.update_layout(title_font_size=24, showlegend=False)
+    fig8.update_layout(title_font_size=24, showlegend=False, hovermode="x unified")
     col6.plotly_chart(fig8, use_container_width=True)
    
 #-------------------------------------------------------------------------------------------------------------- cumulated coffees monthly (line chart)
