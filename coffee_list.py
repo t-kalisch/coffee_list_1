@@ -103,7 +103,7 @@ if login:
         if user == user_data[i][0] and user_pw == user_data[i][1]:
             logged_in=True
     if logged_in == True:
-        st.success("Logged in as {}".format(user))
+        st.sidebar.success("Logged in as {}".format(user))
 
 
         #-------------------------------------------------------------------------------------------------------------- monthly coffees, per person + total (line + bar chart)
