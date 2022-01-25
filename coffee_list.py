@@ -209,14 +209,15 @@ if correlation:
            temp.append(j+1)
            temp.append(corr_abs[i][j])      #calculates absolute correlation
            temp2.append(temp)
-
-   df = pd.DataFrame(temp2, columns={'x-values','y-values','size'})
+   columns_corr=['x-values','y-values','size']
+            
+   df = pd.DataFrame(temp2, columns=columns_corr)
    
    fig5 = px.scatter(df, x='x-values', y='y-values', size='size', labels={"x-values":"", "y-values":""}, title="Absolute correlation", color='size')#, text='size')
    fig5.update_layout(title_font_size=24, showlegend=False, xaxis=dict(tickmode = 'array', tickvals = tickval_num, ticktext = names), yaxis=dict(tickmode = 'array', tickvals = tickval_num, ticktext = names))
-   col3.plotly_chart(fig5, use_container_width=True)              #absolute correlation
+   col3.plotly_chart(fig5, use_container_width=True)#              absolute correlation
    #                                                  --------------------------------------------------
-   temp=[]                                                        #relative correlation
+   temp=[]#                                                        relative correlation
    temp1=[]
    temp2=[]
    tickval_num=[]
@@ -228,8 +229,8 @@ if correlation:
            temp.append(j+1)
            temp.append(round(100*corr_abs[i][j]/total_coffees[i],1))         #!!!!  Calculates relative correlation; uses total_coffees  !!!!
            temp2.append(temp)
-            
-   df = pd.DataFrame(temp2, columns={'x-values','y-values','size'})
+
+   df = pd.DataFrame(temp2, columns=columns_corr)
    st.write(df)
    fig6 = px.scatter(df, x='x-values', y='y-values', size='size', labels={"x-values":"", "y-values":""}, title="Relative correlation", color='size')#, text='size')
    fig6.update_layout(title_font_size=24, showlegend=False, xaxis=dict(tickmode = 'array', tickvals = tickval_num, ticktext = names), yaxis=dict(tickmode = 'array', tickvals = tickval_num, ticktext = names))
