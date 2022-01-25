@@ -55,7 +55,7 @@ with st.sidebar:
         for i in range(len(user_data)):
             if user == user_data[i][0] and user_pw == user_data[i][1]:
                 logged_in=True
-    if logged_in == True
+    if logged_in == True:
         st.sidebar.success("Logged in as {}".format(user))
     else:
         st.sidebar.warning("Incorrect username/password")
