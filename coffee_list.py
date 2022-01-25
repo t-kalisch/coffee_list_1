@@ -11,7 +11,7 @@ import plotly
 import plotly.graph_objects as go
 import plotly.express as px
 import streamlit_echarts as echarts
-from data_collection import *
+#from data_collection import *
 
 
 st.set_page_config(page_title="Coffee list",page_icon="chart_with_upwards_trend",layout="wide")
