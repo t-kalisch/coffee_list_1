@@ -11,7 +11,6 @@ import plotly
 import plotly.graph_objects as go
 import plotly.express as px
 import streamlit_echarts as echarts
-#import mysql.connector
 from data_collection import *
 
 
