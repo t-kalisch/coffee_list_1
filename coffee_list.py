@@ -26,8 +26,8 @@ In order to submit a coffee break, you need to be logged in with your username a
 def submit_holidays(holidays):
     st.write("Submitted holidays: "+str(holidays))
 
-    
-user_data=[['TK', 'akstr!admin2'],['PB','akstr!admin2'],['NV',Null],['DB',Null],['FLG','baddragon'],['SHK',Null],['TB',Null],['TT',Null],['RS',Null]]
+null = None
+user_data=[['TK', 'akstr!admin2'],['PB','akstr!admin2'],['NV',null],['DB',null],['FLG','baddragon'],['SHK',null],['TB',null],['TT',null],['RS',null]]
 simple_data=[9, 7, 15, 1879, 720, 66, 9]
 monthly_coffees_total=[75,25,59,88,163,196,197,150,127,206,184,144,163,103,32]
 monthly_coffees1=[]
