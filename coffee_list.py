@@ -87,6 +87,16 @@ for i in range(15):
 #col3.write("")
 #login = col3.button("Log In", help="Log in with your username and password", on_click=log_in(user, user_pw))
 
+col1,col2,col3,col4 = st.columns([1,1,1,1])
+col1.subheader(str(simple_data[0])+" drinkers")
+col1.subheader(str(simple_data[1])+" active drinkers")
+col2.subheader(str(simple_data[2])+" months of drinking")
+col3.subheader(str(simple_data[4])+" coffee breaks")
+col3.subheader(str(simple_data[3])+" cups of coffee")
+col4.subheader(str(simple_data[5])+" data sets")
+col4.subheader(str(simple_data[6])+" diagrams")
+
+
 if login:
     logged_in=False
     for i in range(len(user_data)):
@@ -94,15 +104,6 @@ if login:
             logged_in=True
     if logged_in == True:
         st.success("Logged in as {}".format(user))
-        
-        col1,col2,col3,col4 = st.columns([1,1,1,1])
-        col1.subheader(str(simple_data[0])+" drinkers")
-        col1.subheader(str(simple_data[1])+" active drinkers")
-        col2.subheader(str(simple_data[2])+" months of drinking")
-        col3.subheader(str(simple_data[4])+" coffee breaks")
-        col3.subheader(str(simple_data[3])+" cups of coffee")
-        col4.subheader(str(simple_data[5])+" data sets")
-        col4.subheader(str(simple_data[6])+" diagrams")
 
 
         #-------------------------------------------------------------------------------------------------------------- monthly coffees, per person + total (line + bar chart)
