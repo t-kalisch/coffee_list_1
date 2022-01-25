@@ -211,8 +211,8 @@ if correlation:
            temp2.append(temp)
    columns_corr=['x-values','y-values','size']
             
-   df = pd.DataFrame(temp2, columns=columns_corr)
-   
+   df = pd.DataFrame(temp2, columns={'x-values','y-values','size'})
+   st.write(df)
    fig5 = px.scatter(df, x='x-values', y='y-values', size='size', labels={"x-values":"", "y-values":""}, title="Absolute correlation", color='size')#, text='size')
    fig5.update_layout(title_font_size=24, showlegend=False, xaxis=dict(tickmode = 'array', tickvals = tickval_num, ticktext = names), yaxis=dict(tickmode = 'array', tickvals = tickval_num, ticktext = names))
    col3.plotly_chart(fig5, use_container_width=True)#              absolute correlation
@@ -231,7 +231,7 @@ if correlation:
            temp2.append(temp)
 
    df = pd.DataFrame(temp2, columns=columns_corr)
-   st.write(df)
+
    fig6 = px.scatter(df, x='x-values', y='y-values', size='size', labels={"x-values":"", "y-values":""}, title="Relative correlation", color='size')#, text='size')
    fig6.update_layout(title_font_size=24, showlegend=False, xaxis=dict(tickmode = 'array', tickvals = tickval_num, ticktext = names), yaxis=dict(tickmode = 'array', tickvals = tickval_num, ticktext = names))
    col4.plotly_chart(fig6, use_container_width=True)
