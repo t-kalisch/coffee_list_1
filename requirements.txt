@@ -5,3 +5,4 @@ matplotlib
 plotly
 streamlit-echarts
 mysql
+mysql-connector-python==3.9.7
