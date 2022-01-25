@@ -4,5 +4,4 @@ streamlit
 matplotlib
 plotly
 streamlit-echarts
-mysql
 mysql-connector-python==8.0.27
