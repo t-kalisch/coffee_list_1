@@ -93,7 +93,7 @@ if login:
         if user == user_data[i][0] and user_pw == user_data[i][1]:
             logged_in=True
     if logged_in == True:
-        st.success("Logged in as{}".format(user))
+        st.success("Logged in as {}".format(user))
         
         col1,col2,col3,col4 = st.columns([1,1,1,1])
         col1.subheader(str(simple_data[0])+" drinkers")
